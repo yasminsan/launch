@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create BEP-20 Binance Smart Chain (BSC) token sale contract with time limit (start and end date) and referral program for ICO without coding in minutes. BSC BEP20 token sale smart contract builder. Binance Smart Chain ICO smart contract. Binance Smart Chain DApp Builder. BNB BSCMetaExchange">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/css/main.css">
+    
+    <title>Create BEP-20 Binance Smart Chain (BSC) token sale contract (ICO) limited by time with referral program without coding. Binance Smart Chain BEP20 token sale and ICO builder.</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://create.metaexchange.finance/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163444952-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-163444952-1');
+    </script>
+    
+</head>
+
+<body>
+    
+      <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+        <img src="https://create.metaexchange.finance/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+        <a href="https://create.metaexchange.finance">MetaExchange</a> | <a class='ethhref' href="https://create.metaexchange.finance/bsc/"><span class="short">Binance Smart Chain (BSC)</span></a>
+         | <span class='erc'> (BEP-20)</span> Token sale with time and referral program
+    </div>
+  </div>
+  <div class="nav-btn" onclick="mobMenu(this)">
+    <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    
+    <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+    <a class="topmenu" href="#networks">Change network</a>
+    <a class="topmenu" href="#contact">Contact</a>
+
+  </div>
+</div>
+    
+    <div class="network small"><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></div>
+        
+
+<div id="admin">
+    <h1>Token sale contract <span id="thisAddr"></span></h1>
+    <p>View on blockchain explorer: <span id="viewThis"></span></p>
+    <p></p>
+    <p>Total sale quantity: <span id="thisSaleQty"></span></p>
+    <p>Token price: <span id="thisTokenPrice"></span> <span class='eth'>BNB</span></p>
+    <p>Token sale start: <span id="thisStart"></span></p>
+    <p>Token sale end: <span id="thisEnd"></span></p>
+    <p>Tokens sold: <span id="thisSold"></span></p>
+    <p>Total raised: <span id="thisRaised"></span> <span class='eth'>BNB</span></p>
+    <p>Unsold tokens: <span id="thisUnsold"></span></p>
+    <hr>
+    <p>Token address: <span id="thisTokenAddress"></span></p>
+    <p>View on blockchain explorer: <span id="viewThisToken"></span></p>
+    <p>Token name: <span id="thisName"></span></p>
+    <p>Token symbol: <span id="thisSymbol"></span></p>
+    <p>Token decimals: <span id="thisDec"></span></p>
+    <p><button id="addToken" class="btnmodal">Add to wallet</button></p>
+    <hr>
+    <p>Token sale status: <span id="thisStatus"></span></p>
+    <button id="thisApprove" class="btnmodal" style="display: none">Approve</button>
+    <hr>
+    <p>Referral commission: <span id="thisRefPercent"></span>%</p>
+    <p>Total paid to referrers: <span id="thisRefTotal"></span> <span class='eth'>BNB</span></p>
+    <hr>
+    <p>Balance: <span id="thisBalance"></span> <span class='eth'>BNB</span></p>
+    <p>Withdraw: <input type="number" id="thisWithdrawAmount" value="0"> <span class='eth'>BNB</span> <button id="thisWithdraw" class="btnmodal">Withdraw</button> <button id="thisWithdrawAll" class="btnmodal">Withdraw all</button></p>
+</div>
+
+
+<script src='https://create.metaexchange.finance/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/layout.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/bsc/js/bsc.js' type="text/javascript" charset="utf-8"></script>
+<script src='tests.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/init.eth.js' type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create Polygon (MATIC) ERC-20 deflationary token without coding in minutes. Polygon (MATIC) ERC-20 auto burn token builder. Polygon (MATIC) token factory. Polygon (MATIC) DApp Builder. MATIC DAppBuilder">
+    <link rel="stylesheet" type="text/css" href="https://dappbuilder.org/css/main.css">
+    
+    <title>Create Polygon (MATIC) ERC-20 deflationary token without coding. Polygon (MATIC) ERC20 token builder.</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://dappbuilder.org/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163444952-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-163444952-1');
+    </script>
+    
+</head>
+
+<body>
+    
+      <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+        <img src="https://dappbuilder.org/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+        <a href="https://dappbuilder.org">DappBuilder</a> | <a class='ethhref' href="https://dappbuilder.org/matic/"><span class="short">Polygon (MATIC)</span></a>
+         | Deflationary token <span class='erc'></span>
+    </div>
+  </div>
+  <div class="nav-btn" onclick="mobMenu(this)">
+    <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    
+    <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+    <a class="topmenu" href="#networks">Change network</a>
+    <a class="topmenu" href="#contact">Contact</a>
+
+  </div>
+</div>
+    
+    <div class="network small"><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></div>
+    
+    <div class='newtkndef'>
+        
+        <div class='newtknhead'>
+            <h2 style="text-align: center">Create <span class='ethereum'></span> deflationary token<span class='erc'></span></h2>
+            <p style="text-align: center">Token with automatic burning with every transfer.<br>
+            For example, deflation is set to 1%; Alice sends 100 tokens to Bob, 
+            Bob receives 99 tokens (100-1%), and 1 token (1% of 100) is burned.</p>
+            <p style="text-align: center">(Mainnet and Testnet available)</p>
+        </div>
+        
+        <div class = 'newtknname'>
+            Name: <input type='text' id='newname' required>
+        </div>
+        
+        <div class = 'newtknsym'>
+            Symbol: <input type='text' id='newsymbol' required>
+        </div>
+        
+        <div class = 'newtknqty'>
+            Supply (tokens quantity): <input type='number' id='newsupply' required>
+        </div>
+        
+        <div class = 'newtkndec'>
+            Decimals: <input type='number' id='newdecimals' value='0' min='0' max='18' required>
+        </div>
+        
+        <div class='newtknper'>
+            Deflation: <input type='number' id='newdeflation' value='0.0' min='0' max='100' step='0.1' required> %
+        </div>
+        
+        <div class = 'newtknmin'>
+            Min. total supply: <input type='number' id='newminsupply' value='0' min='0' required>
+            <br><span class='small'>Stop deflation/burning when remaining tokens quantity reaches this number. Must be less than initial supply.</span>
+        </div>
+        
+        <div class = 'newtknto'>
+            Send to address: <input type='text' id='newto' required>
+        </div>
+        
+        <div class = 'newtknbtn' style='text-align: center'>
+            Token creation cost: <span id='buildercost'></span>&nbsp;<span class='eth'></span>
+            <p><span id='errors' class='err'></span></p>
+            <p><button id='buildbtn'>Create token</button></p>
+        </div>
+        
+    </div>
+    
+    <div class='mytokens'>
+        
+        <h2 style='text-align: center'>My tokens</h2>
+        
+        <table>
+            <thead><tr><th>#</th><th>Address</th><th>Name</th><th>Symbol</th><th>Decimals</th><th>Initial supply</th><th>Deflation</th><th>Current supply</th><th>Min. supply</th><th>Tokens burnt</th><th>Watch</th></tr></thead>
+                <tbody id="strHtml"></tbody>
+        </table>
+        
+    </div>
+    
+    <div class='footer' style='font-size: 12px; text-align: center; margin: 40px;'><hr>
+        &copy;&nbsp;<a href='https://dappbuilder.org'>DappBuilder.org</a> - create blockchain DApps and tokens on Ethereum, Tron Network, Binance Smart Chain (BSC), Polygon (MATIC), Thundercore (TT) without coding
+    </div>
+    
+<!-- Networks -->
+<div id="networks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/eth/">Ethereum (ETH)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/bsc/">Binance Smart Chain (BSC)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/trx/">Tron (TRX)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/thundercore/">Thundercore (TT)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/matic/">Polygon (MATIC)</a></p>
+  </div>
+</div>
+    
+<!-- Contact -->
+<div id="contact" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a href="mailto:db@dappbuilder.org">db@dappbuilder.org</a></p>
+    <p align="center"><a target="_blank" href="https://t.me/dapp_builder">t.me/dapp_builder</a></p>
+    <p align="center"><a target="_blank" href="https://twitter.com/dappbuilder_org">twitter.com/dappbuilder_org</a></p>
+  </div>
+</div>
+
+<script src='https://dappbuilder.org/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/layout.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/matic/js/matic.js' type="text/javascript" charset="utf-8"></script>
+<script src='js/token.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/init.eth.js' type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+</html>

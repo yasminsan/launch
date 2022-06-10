@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create ERC-20 Polygon (MATIC) token sale contract with referral program for ICO without coding in minutes. MATIC ERC20 token sale smart contract builder. Polygon (MATIC) ICO smart contract. Polygon (MATIC) DApp Builder. MATIC DAppBuilder">
+    <link rel="stylesheet" type="text/css" href="https://dappbuilder.org/css/main.css">
+    
+    <title>Create ERC-20 Polygon (MATIC) token sale contract (ICO) with referral program, tokens lock, tokens claim without coding. Polygon (MATIC) ERC20 token sale and ICO builder.</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://dappbuilder.org/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163444952-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-163444952-1');
+    </script>
+    
+</head>
+
+<body>
+    
+      <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+        <img src="https://dappbuilder.org/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+        <a href="https://dappbuilder.org">DappBuilder</a> | <a class='ethhref' href="https://dappbuilder.org/matic/"><span class="short">Polygon (MATIC)</span></a>
+         | <span class='erc'> (ERC-20)</span> Token sale (claim after sale)
+    </div>
+  </div>
+  <div class="nav-btn" onclick="mobMenu(this)">
+    <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    
+    <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+    <a class="topmenu" href="#networks">Change network</a>
+    <a class="topmenu" href="#contact">Contact</a>
+
+  </div>
+</div>
+    
+    <div class="network small">
+        <button id="addMainMATIC">Use MATIC Mainnet</button> <button id="addTestMATIC">Use MATIC Testnet</button> <button id="connect">Connect wallet</button>
+        <span id="nometamask" class="err" style="display: none">Please install Metamask first...</span>
+        <span id="connected" style="color: green; display: none"></span>
+        <p><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></p>
+    </div>
+
+    <div style="text-align: center">
+        <h2><span class='ethereum'>Polygon (MATIC)</span> token sale contract<span class='erc'> (ERC-20)</span><br>
+        with referral program, start, end and tokens claim time settings<br>
+        (administrable)</h2>
+        <button onclick="$('#description').toggle()">Show/hide description</button>
+        <span id="description">
+        <hr>
+        <p>This is a customizable token sale contract with adjustable parameters. Contract is selling tokens in exchange of <span class='eth'>MATIC</span> which is sent to the beneficiary wallet instantly.<br>
+        Buyers can purchase tokens by sending <span class='eth'>MATIC</span> to contract address or using user interface (you will be able to download a simple draft UI with main functions and QR code after creating a token sale contract).<br>
+        Contract correctly processes changes and decimals and automatically stops selling tokens once required quantity has been sold out.<br>
+        <br>Tokens are locked in the contract and can be manually claimed by buyers when claim time arrives or hardcap is reached (adjustable).
+        <br>You can change any settings in the admin panel: rate, hardcap, dates, tokens claim conditions and time, referral percent, purchase limit, stop/resume sale, change owner and beneficiary, throw selected admin functions.
+        <br>When the token sale ends (hardcap is reached or time expires) contract sends all unsold tokens to beneficiary wallet. If any MATIC balance remains on the contract (though it should not) it is also automatically sent to beneficiary.</p>
+        <p>You can use it with any <span class='erc'> (ERC-20)</span> token.</p>
+        <p>Referral commission (if it is > 0) is sent to referrer's wallet instantly, if referrer is not a buyer.</p>
+        <p></p>
+        <p>Once you have created token sale contract you need to send enough tokens to the contract (you will be able to withdraw unsold tokens).</p>
+        <p></p>
+        </span>
+        <p>(Mainnet and Testnet available)</p>
+        <hr>
+    </div>
+    
+    <div style="text-align: center">
+            
+        <h1>Create token sale contract</h1>
+        
+        <h2>Token address</h2>
+        <span class="small">Contract address of the token that you want to sell</span>
+        <br><input type='text' id='newtknaddress' size="60" required>
+        <br><span class="small clickable" id="mytokens">[show my tokens]</span>
+        <div id="tokendata"></div>
+            
+        <h2>Rate</h2>
+        <input type='number' id='newrate' min="0" required>
+        <br><span class='small'>How many tokens buyer gets for 1 <span class='eth'>MATIC</span> (you will be able to change it in the admin panel).</span>
+        <div id="tokenprice"></div>
+            
+        <h2>Hard cap</h2>
+        <input type='number' id='newhardcap' min="0" required> <span class='eth'>MATIC</span>
+        <br><span class='small'>Amount (<span class='eth'>MATIC</span>) that you want to raise (you will be able to change it in the admin panel). After raising this amount contract will stop selling tokens.<br>
+        Can be changed in admin panel.</span>
+        <div id="quantity"></div>
+        
+        <h2>Max. contribution</h2>
+        <input type="checkbox" id="unlimited" unchecked> <label for="unlimited" class="clickable">Unlimited</label><br>
+        <span id="limits"><input type='number' id='newmax' min="0"> <span class='eth'>MATIC</span></span>
+        <br><span class='small'>Maximum amount a user can invest. This is a purchase limit for each wallet address, a user (wallet address) can not contribute more than this limit totally during the token sale.<br>
+        Can be changed in admin panel.</span>
+        
+        <h2>Start time</h2>
+        <input type="datetime-local" id="newstartdate">
+        <br><span class='small'>Your local time when your token sale will begin (you will be able to change it in the admin panel). Before this time contract will not sell tokens.<br>
+        Can be changed in admin panel.</span>
+        
+        <h2>End time</h2>
+        <input type="datetime-local" id="newenddate">
+        <br><span class='small'>Your local time when your token sale will end (you will be able to change it in the admin panel). After this time contract will not sell tokens.<br>
+        Can be changed in admin panel.</span>
+        <div id="duration"></div>
+        
+        <h2>Unlock time</h2>
+        <input type="checkbox" id="afterend" unchecked> <label for="afterend" class="clickable">Immediately after token sale ends</label><br>
+        <input type="datetime-local" id="newunlockdate">
+        <br><span class='small'>After this time buyers will be able to claim their tokens.</span>
+        <p><input type="checkbox" id="allow" checked> <label for="allow" class="clickable">Unlock when hardcap is reached 
+        plus <input type='number' id='newafterhc' min="0" value="0"> hours.</label><br>
+        <span class='small'>Allow buyers to claim their tokens if hardcap is filled before token sale end time.<br>
+        Can be changed in admin panel.</span></p>
+        
+        <h2>Referral commission</h2>
+        <input type='number' id='newref' value='0.0' min='0' max='100' step='0.1' required> %
+        <br><span class='small'>Commission to be paid from each referred token purchase. Paid instantly to referrer's wallet.<br>
+        Can be changed in admin panel. If set to 0 is off.</span>
+        
+        <h2>Beneficiary</h2>
+        <span class="small">Address where funds from token sale will be sent to. <span class='eth'>MATIC</span> are sent instantly to this wallet, they are not kept in the contract.<br>By default this is your address. You will be able to change it later in the admin panel.</span>
+        <br><input type='text' id='newbeneficiary' size="60" required>
+        <br><span class="small clickable" id="benme">[my wallet]</span>
+        <div id="isben"></div>
+        
+        <h2>Contract creation cost: <span id='buildercost'></span>&nbsp;<span class='eth'></span></h2>
+        
+        <p><span id='errors' class='err'></span></p>
+        <p><button id='buildbtn'>Create contract</button></p>
+        
+        <hr>
+    
+        <h2>My token sale contracts</h2>
+        <div id="mycontr"></div>
+    
+    </div>
+    
+    
+        
+    <div class='footer' style='font-size: 12px; text-align: center; margin: 40px;'><hr>
+        &copy;&nbsp;<a href='https://dappbuilder.org'>DappBuilder.org</a> - create blockchain DApps and tokens on Ethereum, Tron Network, Binance Smart Chain (BSC), Polygon (MATIC), Thundercore (TT) without coding
+    </div>
+    
+<!-- Networks -->
+<div id="networks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/eth/">Ethereum (ETH)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/bsc/">Binance Smart Chain (BSC)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/trx/">Tron (TRX)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/thundercore/">Thundercore (TT)</a></p>
+    <p align="center"><a class="changenet" href="https://dappbuilder.org/matic/">Polygon (MATIC)</a></p>
+  </div>
+</div>
+    
+<!-- Contact -->
+<div id="contact" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a href="mailto:db@dappbuilder.org">db@dappbuilder.org</a></p>
+    <p align="center"><a target="_blank" href="https://t.me/dapp_builder">t.me/dapp_builder</a></p>
+    <p align="center"><a target="_blank" href="https://twitter.com/dappbuilder_org">twitter.com/dappbuilder_org</a></p>
+  </div>
+</div>
+
+<!-- My tokens -->
+<div id="mytoks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>My tokens</h1>
+    <p>Only tokens created on this platform are shown here but you can use any valid <span class='erc'> (ERC-20)</span> token</p>
+    <table>
+        <thead><tr><th>#</th><th>Address</th><th>Name</th><th>Symbol</th><th>Choose</th></tr></thead>
+                <tbody id="strHtmlTokens"></tbody>
+        </table>
+  </div>
+</div>
+
+<!-- Admin -->
+<div id="admin" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <h1 style="text-align: center">Token sale contract<br><span id="thisAddr"></span></h1>
+    <hr>
+    
+    <h1 style="text-align: center">Token info</h1>
+    
+    <p>Token contract address: <a target="_blank" href="" title="View on explorer" id="thisTokenAddress"></a>  <button class="btnmodal" id="copyaddress">Copy</button></p>
+    <p>Name (symbol): <span id="thisName"></span> (<span class="thisSymbol"></span>)</p>
+    <p>Decimals: <span id="thisDec"></span></p>
+    <p>Total supply: <span id="tokenSupplyUI"></span> <span class="thisSymbol"></span></p>
+    <p><button id="addToken" class="btnmodal">Add to Metamask</button></p>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Token sale contract</h1>
+    <h2><a target="_blank" href="" title="View on explorer" id="thisSaleAddress"></a></h2>
+    <p><button class="btnmodal" id="copysaleaddress">Copy</button></p>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Rate</h1>
+    <h2>1 <span class='eth'>MATIC</span> = <span id="thisRate"></span> <span class="thisSymbol"></span></h2>
+    <p>1 token ~ <span id='thisPrice'></span> <span class='eth'>MATIC</span></p>
+    <span id="admRate">
+    <p>Set new rate: <input type="number" min="0" id="thisnewrate"> <span class="thisSymbol"></span> / <span class='eth'>MATIC</span> <button class="btnmodal" id="setnewrate">Change</button></p>
+    <div id="checknewrate"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Hard cap</h1>
+    <h2><span class="thisHardcap"></span> <span class='eth'>MATIC</span></h2>
+    <p>~ <span class="thisQty"></span> <span class="thisSymbol"></span></p>
+    <span id="admHardcap">
+    <p>Set new hardcap: <input type="number" min="0" id="thisnewhc"> <span class='eth'>MATIC</span> <button class="btnmodal" id="setnewhc">Change</button></p>
+    <div id="checknewhc"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Start time</h1>
+    <h2><span id="thisStart"></span></h2>
+    <span class="small">Before this time token sale contract will not sell tokens</span>
+    <span class="admTime">
+    <p>Change: <input type="datetime-local" id="thisnewstart"> <button class="btnmodal" id="setnewstart">Change</button> 
+    <div id="checknewstart"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>End time</h1>
+    <h2><span id="thisEnd"></span></h2>
+    <span class="small">After this time token sale contract will not sell tokens</span>
+    <span class="admTime">
+    <p>Change: <input type="datetime-local" id="thisnewend"> <button class="btnmodal" id="setnewend">Change</button> 
+    <div id="checknewend"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Duration</h1>
+    <h2 id="thisDuration"></h2>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Purchase limit</h1>
+    <h2><span id="thisMax"></span> <span class='eth'>MATIC</span></h2>
+    <span class="small">Maximum amount that can be contributed from one wallet totally during the token sale</span>
+    <span id="admMax">
+    <p>Set new limit: <input type="number" min="0" id="thisnewmax"> <span class='eth'>MATIC</span> <button class="btnmodal" id="setnewmax">Change</button> 
+    <button class="btnmodal" id="setnewmax1">Unlimited</button></p>
+    <div id="checknewmax"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Tokens unlock time</h1>
+    <h2><span id="thisClaim"></span></h2>
+    <span class="small">Tokens can be locked inside of token sale contract so that investors can claim them when certain time comes</span>
+    <span id="admClaim">
+    <p>Change time: <input type="datetime-local" id="thisnewclaim"> <button class="btnmodal" id="setnewclaim">Change</button></p>
+    <p><span id="thisClaimAfterHC"></span> <button class="btnmodal" id="allowClaim" style="display:none">Allow</button>
+    <button class="btnmodal" id="disallowClaim" style="display:none">Disallow</button></p>
+    <p>Hours to lock after hardcap is reached: <input type="number" min="0" id="thisnewdelay"> <button class="btnmodal" id="setnewdelay">Change</button></p>
+    <div id="checknewclaim"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Referral commission</h1>
+    <h2><span id="thisRef"></span> %</h2>
+    <span class="small">Referral commission is paid from each referred purchase instantly to referrer's wallet.<br>
+    If you don't want to use referral program set referral percent to 0.</span>
+    <span id="admRef">
+    <p>Change percent: <input type="number" id="thisnewref" step="0.1" min="0"> % <button class="btnmodal" id="setnewref">Change</button></p>
+    <div id="checknewref"></div>
+    </span>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Token sale status</h1>
+    <h1><span id="thisStatus"></span></h1>
+    <p><progress id="progress" value="0" max="100" style="width: 70%"></progress></p>
+    <p>Raised: <span id="thisRaised"></span> of <span class="thisHardcap"></span> <span class='eth'>MATIC</span></p>
+    <p>Sold: <span id="thisSold"></span> of <span class="thisQty"></span> <span class="thisSymbol"></span></p>
+    <p>To raise: <span id="thisRemaining"></span> <span class='eth'>MATIC</span></p>
+    <p>To sell: <span id="thisUnsoldQty"></span> <span class="thisSymbol"></span></p>
+    <p>Paid to referrers: <span id="thisRefTotal"></span> <span class='eth'>MATIC</span></p>
+    <p>Tokens on sale contract balance: <span id="tokenbalance"></span> <span class="thisSymbol"></span></p>
+    <div id="todo"></div>
+    <p id="admPause"><button class="btnmodal" id="saleOn" style="display:none">Activate</button> <button class="btnmodal" id="saleOff" style="display:none">Stop</button></p>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Admin privileges</h1>
+    <span class="small">Once you renounce a privilege you will not have admin access to this function any more, it's value will be fixed forever</span>
+    
+    <p><span id="hardCapFixed"></span> <button class="btnmodal" id="fixHardCap" style="display:none">Renounce</button></p>
+    <p><span id="purchaseLimitFixed"></span> <button class="btnmodal" id="fixPurchaseLimit" style="display:none">Renounce</button></p>
+    <p><span id="rateFixed"></span> <button class="btnmodal" id="fixRate" style="display:none">Renounce</button></p>
+    <p><span id="refPercentFixed"></span> <button class="btnmodal" id="fixRefPercent" style="display:none">Renounce</button></p>
+    <p><span id="saleTimeFixed"></span> <button class="btnmodal" id="fixSaleTime" style="display:none">Renounce</button></p>
+    <p><span id="claimTermsFixed"></span> <button class="btnmodal" id="fixClaimTerms" style="display:none">Renounce</button></p>
+    <p><span id="pausable"></span> <button class="btnmodal" id="makeUnpausable" style="display:none">Renounce</button></p>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Other functions</h1>
+    <span class="small">When the token sale finishes unsold tokens and any accidentally occuring balance are automatically sent from the contract to beneficiary wallet.<br>
+    For any other situations these functions can be used.</span>
+    
+    <p>Tokens that can be withdrawn: <span id="availableTok"></span> <span class="thisSymbol"></span> <input type="number" id="toWithdrawTok"> <button class="btnmodal" id="withdrawTok">Withdraw</button></p>
+    <p><span class="eth">MATIC</span> on the balance: <span id="thisBalance"></span> <span class="eth">MATIC</span> <button class="btnmodal" id="withdrawBnb">Withdraw all</button></p>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Owner</h1>
+    <span class="small">Owner is the contract admin. Only owner has access to contract settings.</span>
+    <h2 id="thisOwner"></h2>
+    <p>New owner: <input type="text" id="thisnewowner"> <button class="btnmodal" id="setnewowner">Change</button></p>
+    <div id="checkthisowner"></div>
+    </div>
+    <hr>
+    
+    <div style="text-align: center">
+    <h1>Beneficiary</h1>
+    <span class="small">Beneficiary is the wallet address where raised funds are sent.<br>
+    It may be owner's wallet or a different wallet. Beneficiary does not have admin access to the contract.</span>
+    <h2 id="thisBen"></h2>
+    <p>New beneficiary: <input type="text" id="thisnewben"> <button class="btnmodal" id="setnewben">Change</button></p>
+    <div id="checkthisben"></div>
+    </div>
+    <hr>
+    
+    <h1>Token sale UI</h1>
+    
+    <p>You can download front-end HTML file and edit the file after downloading, or order some design on top of it.<br>
+    Please keep the scripts, IDs and classes otherwise some important functions may not work properly.</p>
+    <p>Just upload index.html file to your website - and your very own token sale is live!</p>
+    <p>You can also copy the HTML code to clipboard.</p>
+    <p><button class="btnmodal" onclick="download('index.html','htmlpage')">Download HTML file</button> 
+    <button class="btnmodal" onclick="copyToClipboard('#htmlpage')">Copy HTML code</button> 
+    <button class="btnmodal" onclick="$('#htmlpage').toggle()">Show/hide HTML</button></p>
+    
+<div id="htmlpage" class="embedcode" style="display: none">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html &gt;<br>
+&lt;head&gt;<br>
+    &lt;meta charset="UTF-8"&gt;<br>
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+    &lt;meta name="description" content="Token sale page"&gt;<br>
+<br>
+    &lt;title&gt;Token sale&lt;/title&gt;<br>
+   <br>
+    &lt;script&gt;<br>
+        var test = <span id="istest">false</span>; // False if contracts are on Mainnet<br>
+        var contractAddressSale = '<span class="uiAddr"></span>';<br>
+        var contractAddressToken = '<span class="tokenAddressUI"></span>';<br>
+    &lt;/script&gt;<br>
+    <br>
+    &lt;style&gt;<br>
+        <br>
+        body {font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #FFFFFF; background-color: #000000; font-size: 16px; font-weight: 400;}<br>
+<br>
+        h1 { font-size: 24px; font-weight: 700;}<br>
+        h2 { font-size: 22px; font-weight: 500;}<br>
+<br>
+        .small {<br>
+            font-size: 12px;<br>
+        }<br>
+<br>
+        .err {<br>
+             color: red;<br>
+        }<br>
+        <br>
+        .green {<br>
+             color: green;<br>
+        }<br>
+        <br>
+        .blue {<br>
+             color: blue;<br>
+        }<br>
+<br>
+        * {<br>
+          box-sizing: border-box;<br>
+        }<br>
+        <br>
+        a {<br>
+          color: #FFFFFF;<br>
+          text-decoration: none;<br>
+        }<br>
+        <br>
+        a:hover {<br>
+          color: #C0C0C0;<br>
+        }<br>
+        <br>
+        .clickable {<br>
+            cursor: pointer;<br>
+        }<br>
+        <br>
+        .clickable:hover {<br>
+            color: #C0C0C0;<br>
+        }<br>
+        <br>
+        button {<br>
+          background-color: #283747;<br>
+          border: none;<br>
+          border-radius: 2px;<br>
+          color: white;<br>
+          padding: 5px 20px;<br>
+          text-align: center;<br>
+          text-decoration: none;<br>
+          font-size: 16px;<br>
+          display: inline-block;<br>
+          margin: 4px 2px;<br>
+          cursor: pointer;<br>
+        }<br>
+        <br>
+        button:hover {<br>
+          background-color: #008000;<br>
+        }<br>
+        <br>
+        button[disabled] {<br>
+          opacity: 0.6;<br>
+          cursor: not-allowed;<br>
+        }<br>
+        <br>
+        hr {<br>
+            margin: 20px;<br>
+            border: 0;<br>
+            border-top: 1px dashed;<br>
+        }<br>
+        <br>
+        input {<br>
+          text-align: center;<br>
+          font-size: 18px;<br>
+          background-color: #000000;<br>
+          color: #FFFFFF;<br>
+          border:1px solid;<br>
+          max-width: 100%;<br>
+        }<br>
+    &lt;/style&gt;<br>
+    <br>
+&lt;/head&gt;<br>
+<br>
+&lt;body&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;button id="connect" style="font-size: 12px"&gt;Connect&lt;/button&gt; &lt;button class="switch" id="<span id='switchbtnid'></span>" style="font-size: 12px;"&gt;<span id='switchbtn'></span>&lt;/button&gt;<br>
+        &lt;span id="nometamask" class="err" style="display: none"&gt;Please install Metamask first...&lt;/span&gt;<br>
+        &lt;div class="network small"&gt;&lt;span id="curnet"&gt;&lt;span class="err"&gt;Please use DApp browser/extension (e.g. &lt;a target="_blank" href="https://metamask.io"&gt;Metamask&lt;/a&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span id="myAddr"&gt;&lt;/span&gt;<br>
+        &lt;span id="referred" style="display:none"&gt;&lt;br&gt;Referrer: &lt;span id="referrer"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Token info&lt;/h1&gt;<br>
+        &lt;h2&gt;&lt;span id="tokenName"&gt;<span id="tokenNameUI"></span>&lt;/span&gt; (&lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;)&lt;/h2&gt;<br>
+        &lt;p&gt;&lt;a target="_blank" href="<span id="tokenAddressUIlnk"></span>" id="tokenAddress"&gt;<span class="tokenAddressUI"></span>&lt;/a&gt;&lt;/p&gt;<br>
+        &lt;!-- Reserved in case you want to show decimals and total supply: Decimals &lt;span id="#tokenDecimals"&gt;<span class="tokenDecimalsUI"></span>&lt;/span&gt; Total supply &lt;span id="#tokenSupply"&gt;<span class="tokenSupplyUI"></span>&lt;/span&gt;--&gt;<br>
+        &lt;p&gt;&lt;button id="addToken" style="text-align: center"&gt;Add to Metamask&lt;/button&gt; &lt;button id="copyToken" style="text-align: center"&gt;Copy address&lt;/button&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Token sale status&lt;/h1&gt;<br>
+        &lt;h1&gt;<br>
+            &lt;span id="finished" style="display:none" class="status green"&gt;Finished&lt;/span&gt;<br>
+            &lt;span id="unlocked" style="display:none" class="status green"&gt;&lt;br&gt;Claim unlocked&lt;/span&gt;<br>
+            &lt;span id="locked" style="display:none" class="status err"&gt;&lt;br&gt;Claim locked&lt;/span&gt;<br>
+            &lt;span id="addtokens" style="display:none" class="status err"&gt;&lt;br&gt;Ask token sale admin to add tokens to the sale contract!&lt;/span&gt;<br>
+            &lt;span id="active" style="display:none" class="status green"&gt;Active&lt;/span&gt;<br>
+            &lt;span id="paused" style="display:none" class="status err"&gt;Paused&lt;/span&gt;<br>
+            &lt;span id="upcoming" style="display:none" class="status blue"&gt;Upcoming&lt;/span&gt;<br>
+            &lt;span id="upcomingtimer" style="display:none" class="status blue"&gt;&lt;br&gt;begins in &lt;span id="starttimer"&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span id="activetimer" style="display:none" class="status green"&gt;&lt;br&gt;ends in &lt;span id="endtimer"&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;/h1&gt;<br>
+        &lt;p&gt;&lt;progress id="progress" value="0" max="100" style="width: 70%"&gt;&lt;/progress&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Raised: &lt;span id="raised"&gt;&lt;/span&gt; of &lt;span class="hardcap"&gt;&lt;/span&gt; <span class='eth'>MATIC</span>&lt;/p&gt;<br>
+        &lt;p&gt;Tokens sold: &lt;span id="sold"&gt;&lt;/span&gt; of &lt;span class="saleqty"&gt;&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Remaining: &lt;span id="toraise"&gt;&lt;/span&gt; <span class='eth'>MATIC</span> (~ &lt;span id="unsold"&gt;&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;)&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Buy tokens&lt;/h1&gt;<br>
+        &lt;p&gt;1 <span class='eth'>MATIC</span> = &lt;span class="rate"&gt;&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;&lt;input type="number" id="buyAmount" value="0" min="0"&gt; <span class='eth'>MATIC</span>&lt;/p&gt;<br>
+        &lt;p&gt;You get: &lt;span id="get"&gt;0&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;&lt;button id="buyBtn" style="text-align: center"&gt;Buy&lt;/button&gt;&lt;/p&gt;<br>
+        &lt;p&gt;You have contributed &lt;span id="mySpendings"&gt;?&lt;/span&gt; of &lt;span class="max"&gt;?&lt;/span&gt; <span class='eth'>MATIC</span> maximum purchase limit, <br>
+        can spend max. &lt;span id="myRemaining"&gt;?&lt;/span&gt; <span class='eth'>MATIC</span> more&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Token sale information&lt;/h1&gt;<br>
+        &lt;p&gt;Hardcap: &lt;span class="hardcap"&gt;&lt;/span&gt; <span class='eth'>MATIC</span> (~ &lt;span class="saleqty"&gt;&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;)&lt;/p&gt;<br>
+        &lt;p&gt;Rate: 1 <span class='eth'>MATIC</span> = &lt;span class="rate"&gt;&lt;/span&gt; &lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt; (~ &lt;span class="price"&gt;&lt;/span&gt; <span class='eth'>MATIC</span>/&lt;span class="tokenSymbol"&gt;<span class="thisSymbol"></span>&lt;/span&gt;)&lt;/p&gt;<br>
+        &lt;p&gt;Purchase limit: &lt;span class="max"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Start: &lt;span id="start"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;End: &lt;span id="end"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Duration: &lt;span id="duration"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Tokens claim: &lt;span id="claimtime"&gt;&lt;/span&gt; <br>
+        &lt;span id="canhcdelay" style="display:none" class="claimstatus"&gt;Can be claimed after hardcap is reached + &lt;span id="canhcdelayh"&gt;&lt;/span&gt;&lt;/span&gt;<br>
+        &lt;span id="canhc" style="display:none" class="claimstatus"&gt;Can be claimed immediately after hardcap is reached&lt;/span&gt;<br>
+        &lt;span id="cannothc" style="display:none" class="claimstatus"&gt;Can be claimed only when unlock time comes&lt;/span&gt;<br>
+        &lt;/p&gt;<br>
+<br>
+    &lt;/div&gt;<br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;My tokens&lt;/h1&gt;<br>
+        &lt;p&gt;In my wallet: &lt;span id="myTokens"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Unclaimed: &lt;span id="myUnclaimed"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;div id="claimstatus"&gt;<br>
+            &lt;span id="claimok" style="display:none" class="claimstatus green"&gt;Tokens are unlocked and can be claimed&lt;/span&gt;<br>
+            &lt;span id="claimnotok" style="display:none" class="claimstatus err"&gt;Tokens are locked&lt;/span&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;p&gt;&lt;button id="claim"&gt;Claim my tokens&lt;/button&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Sale contract&lt;/h1&gt;<br>
+        &lt;p&gt;You can also buy tokens by sending <span class='eth'>MATIC</span> directly from your wallet to this contract&lt;br&gt;<br>
+        (please increase gas limit to 200,000 or even more for tokens with special functions like autoLP, swaps, etc.)&lt;/p&gt;<br>
+        &lt;p&gt;&lt;a href="<span id="uiAddrLnk"></span>" target="_blank" id="saleAddress"&gt;<span class="uiAddr"></span>&lt;/a&gt;  &lt;button id="copySale" style="text-align: center"&gt;Copy address&lt;/button&gt;&lt;/p&gt;<br>
+            &lt;div style="text-align: center" id="saleqr"&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h1&gt;Referral program&lt;/h1&gt;<br>
+        &lt;p&gt;Share your referral link and get paid instantly to your wallet for every referred token purchase.&lt;/p&gt;<br>
+        &lt;p&gt;Total paid to referrers: &lt;span id="refTotal"&gt;&lt;/span&gt; <span class='eth'>MATIC</span>&lt;/p&gt;<br>
+        &lt;p&gt;Referral commission: &lt;span id="refPercent"&gt;10&lt;/span&gt;%&lt;/p&gt;<br>
+        &lt;p&gt;Your referral earnings: &lt;span id="refMy"&gt;&lt;/span&gt; <span class='eth'>MATIC</span>&lt;/p&gt;<br>
+        <br>
+        &lt;p&gt;Share your referral link or QR code and get commission for referred token purchases instantly to your wallet.&lt;/p&gt;<br>
+        &lt;p&gt;&lt;input type="text" id="referLink" size="70" readonly="true"&gt; &lt;button id="copyreflink"&gt;Copy link&lt;/button&gt;&lt;/p&gt;<br>
+        &lt;div id="refqrcode"&gt;<br>
+            &lt;div style="text-align: center" id="refqr"&gt;&lt;/div&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;p id="refErr" class="err" style="display: none"&gt;Please connect your wallet on Polygon (MATIC) to generate your referral link!&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+&lt;script src='https://dappbuilder.org/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+&lt;script src='https://dappbuilder.org/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+&lt;script src='https://dappbuilder.org/matic/tokensaleclaimtimeref/js/tokensale.ui.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</div>
+
+<hr>
+
+<div style="text-align: center">
+    
+    <h2>Your token sale contract can also work without UI.</h2>
+    <p>Buyers can send <span class='eth'>MATIC</span> to contract and get tokens in return instantly.</p>
+    <p>Recommended gas limit for correct contract execution 200,000 or more for normal tokens, special tokens with auto-LP, swap, taxes etc. may require gas limit over 1,000,000. Inform token buyers about this!</p>
+    <p>Just share token sale contract address</p>
+    <h2><a target="_blank" href="" title="View on explorer" id="thisSaleAddress2"></a></h2>
+    <p><button id="copysaleaddress2" class="btnmodal">Copy</button></p>
+    <p>and/or QR code</p>
+    <div style="text-align: center" id="refqr"></div>
+    <p style="text-align: center"><a style="text-decoration: none" id="refd" href="" download>&nbsp;Download QR&nbsp;</a></p>
+    
+</div>
+
+    
+  </div>
+</div>
+
+<script src='https://dappbuilder.org/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/layout.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/matic/js/matic.js' type="text/javascript" charset="utf-8"></script>
+<script src='js/contract.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/init.eth.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/addnet.js' type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

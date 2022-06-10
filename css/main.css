@@ -1,0 +1,1110 @@
+body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: #FFFFFF;
+        background-color: #000000;
+        font-size: 16px;
+        font-weight: 400;
+}
+
+h1 { font-size: 24px; font-weight: 700;} 
+h2 { font-size: 22px; font-weight: 500;}
+
+.small {
+    font-size: 12px;
+}
+
+.err {
+     color: #fa0707;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C0C0C0;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: #C0C0C0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border:0px;
+}
+
+td, th {
+  text-align: center;
+  font-size: 14px;
+}
+
+button {
+  background-color: #283747;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008000;;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnmodal {
+    background-color: #000000;
+}
+
+.translate {
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnmenu {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+hr {
+    margin: 20px;
+    border: 0;
+    border-top: 1px dashed;
+}
+
+input {
+  text-align: center;
+  font-size: 18px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border:1px solid;
+  max-width: 100%;
+}
+
+/*
+[type=number] {
+    width: 120px;
+    -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+*/
+
+.embedcode {
+  font-size: 14px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border:1px solid;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.addr {
+    font-size: 14px;
+}
+
+textarea.address {
+  text-align: left;
+  font-size: 14px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border:1px solid;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  /*border-radius: 4px;*/
+  resize: none;
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+  
+textarea.address::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+}
+
+
+input[type=color] {
+    width: 100%;
+    min-width: 50px;
+    height: 50px;
+}
+
+
+/* Top header and main menu begin */   
+
+.nav {
+  grid-area: nav;
+  /*height: 50px;*/
+  width: 100%;
+  background-color: #283747;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #FFFFFF;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  color: #C0C0C0;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+/* Top header and main menu end */    
+
+/* ============================================= Grids ==================================================== */
+.tokenrow {
+    display: grid;
+    grid-template-columns: 10% 30% 30% 15% 15%;
+    grid-template-areas:
+        'no name supply decimals add'
+        'no addresss addresss addresss add';
+    grid-gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+}
+
+.no,
+.addresss,
+.name,
+.supply,
+.decimals,
+.add {
+    margin: auto;
+    text-align: center;
+}
+
+.no {
+    grid-area: no;
+}
+
+.addresss {
+    grid-area: addresss;
+}
+
+.name {
+    grid-area: name;
+}
+
+.supply {
+    grid-area: supply;
+}
+
+.decimals {
+    grid-area: decimals;
+}
+
+.add {
+    grid-area: add;
+}
+
+
+
+.salerow {
+    display: grid;
+    grid-template-columns: 10% 50% 20% 20%;
+    grid-template-areas:
+        'saleno saleaddress saletoken salestatus';
+    grid-gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+.salerow:hover {
+    background-color: #008000;
+}
+
+.saleno,
+.saleaddress,
+.saletoken,
+.salestatus {
+    margin: auto;
+    text-align: center;
+}
+
+.saleno {
+    grid-area: saleno;
+}
+
+.saleaddress {
+    grid-area: saleaddress;
+}
+
+.saletoken {
+    grid-area: saletoken;
+}
+
+.salestatus {
+    grid-area: salestatus;
+}
+
+
+
+.sheader,
+.tokenshead,
+.gameshead,
+.nethead {
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+.list {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #283747;
+    height: 100%;
+}
+
+a > .list:hover {
+    background-color: #008000;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.nets {
+    display: grid;
+    grid-template-areas:
+        'nethead nethead nethead'
+        'net1 net2 net3'
+        'net4 net5 net6';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.nethead {
+    grid-area: nethead;
+}
+
+.net1 {
+    grid-area: net1;
+}
+
+.net2 {
+    grid-area: net2;
+}
+
+.net3 {
+    grid-area: net3;
+}
+
+.net4 {
+    grid-area: net4;
+}
+
+.net5 {
+    grid-area: net5;
+}
+
+.net6 {
+    grid-area: net6;
+}
+
+.tokens {
+    display: grid;
+    grid-template-areas:
+        'tokenshead tokenshead'
+        'token1 token2'
+        'token3 token4'
+        'token5 token6'
+        'token7 token8'
+        'token9 token10'
+        'token11 token12'
+        'token13 token14'
+        'token15 token16'
+        'token17 token18';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.tokenshead {
+    grid-area: tokenshead;
+}
+
+.token1 {
+    grid-area: token1;
+}
+
+.token2 {
+    grid-area: token2;
+}
+
+.token3 {
+    grid-area: token3;
+}
+
+.token4 {
+    grid-area: token4;
+}
+
+.token5 {
+    grid-area: token5;
+}
+
+.token6 {
+    grid-area: token6;
+}
+
+.token7 {
+    grid-area: token7;
+}
+
+.token8 {
+    grid-area: token8;
+}
+
+.token9 {
+    grid-area: token9;
+}
+
+.token10 {
+    grid-area: token10;
+}
+
+.token11 {
+    grid-area: token11;
+}
+
+.token12 {
+    grid-area: token12;
+}
+
+.token13 {
+    grid-area: token13;
+}
+
+.token14 {
+    grid-area: token14;
+}
+
+.token15 {
+    grid-area: token15;
+}
+
+.token16 {
+    grid-area: token16;
+}
+
+.token17 {
+    grid-area: token17;
+}
+
+.token18 {
+    grid-area: token18;
+}
+
+.games {
+    display: grid;
+    grid-template-areas:
+        'gameshead gameshead'
+        'game1 game2';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.gameshead {
+    grid-area: gameshead;
+}
+
+.game1 {
+    grid-area: game1;
+}
+
+.game2 {
+    grid-area: game2;
+}
+
+.newtkndeftax {
+    display: grid;
+    grid-template-areas:
+        'newtknhead newtknhead'
+        'newtknname newtknsym'
+        'newtknqty newtkndec'
+        'newtkntax1 newtknaddress1'
+        'newtkntax2 newtknaddress2'
+        'newtknper newtknmin'
+        'newtkntotal newtknto'
+        'newtknbtn newtknbtn';
+    grid-gap: 10px;
+    width: 100%;
+}
+ 
+.newtkndef {
+    display: grid;
+    grid-template-areas:
+        'newtknhead newtknhead'
+        'newtknname newtknsym'
+        'newtknqty newtkndec'
+        'newtknper newtknmin'
+        'newtknto newtknto'
+        'newtknbtn newtknbtn';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.newtkncapped {
+    display: grid;
+    grid-template-areas:
+        'newtknhead newtknhead'
+        'newtknname newtknsym'
+        'newtkncap newtkndec'
+        'newtknqty newtknto'
+        'newtknbtn newtknbtn';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.newtkn {
+    display: grid;
+    grid-template-areas:
+        'newtknhead newtknhead'
+        'newtknname newtknsym'
+        'newtknqty newtkndec'
+        'newtknto newtknto'
+        'newtknbtn newtknbtn';
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.newtknhead {
+    grid-area: newtknhead;
+}
+
+.newtknname {
+    grid-area: newtknname;
+}
+
+.newtknsym {
+    grid-area: newtknsym;
+}
+
+.newtknqty {
+    grid-area: newtknqty;
+}
+
+.newtkndec {
+    grid-area: newtkndec;
+}
+
+.newtknper {
+    grid-area: newtknper;
+}
+
+.newtknmin {
+    grid-area: newtknmin;
+}
+
+.newtkntax1 {
+    grid-area: newtkntax1;
+}
+
+.newtkntax2 {
+    grid-area: newtkntax2;
+}
+
+.newtknaddress1 {
+    grid-area: newtknaddress1;
+}
+
+.newtknaddress2 {
+    grid-area: newtknaddress2;
+}
+
+.newtknto {
+    grid-area: newtknto;
+}
+
+.newtknbtn {
+    grid-area: newtknbtn;
+}
+
+
+
+.eth1 {
+    grid-area: eth1;
+    cursor: pointer;
+    margin: 20px;
+    padding: 20px;
+    background-color: #283747;
+}
+
+.eth2 {
+    grid-area: eth2;
+    cursor: pointer;
+    margin: 20px;
+    padding: 20px;
+    background-color: #283747;
+}
+
+.eth1:hover,
+.eth2:hover,
+.eth3:hover,
+.eth4:hover,
+.eth5:hover,
+.eth6:hover,
+.eth7:hover,
+.eth8:hover,
+.trx1:hover,
+.trx2:hover,
+.trx3:hover,
+.trx4:hover,
+.trx5:hover,
+.trx6:hover,
+.trx7:hover,
+.trx8:hover,
+.bldr:hover {
+    background-color: #008000;
+}
+
+/* The main grid container */
+.grid-containerb {
+  display: grid;
+  grid-template-areas: 
+    'nav nav'
+    'subheaderb subheaderb'
+    'allgames create'
+    'footerb footerb';
+  grid-column-gap: 10px;
+} 
+
+.buildowner,
+.buildremarks,
+.buildcontract,
+.buildcommission,
+.ownjackpot,
+.ownreferral,
+.custom,
+.buildnew,
+.buildup,
+.embedoptions,
+.checkpercents {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid; 
+    border-radius: 5px; 
+    padding: 10px;
+    margin: 10px;
+}
+
+.buildnew,
+.buildup {
+    cursor: pointer;
+    margin: 20px;
+    padding: 20px;
+    background-color: #283747;
+}
+
+.buildnew:hover,
+.buildup:hover {
+    background-color: #008000;
+}
+
+.subheaderb {
+  grid-area: subheaderb;
+  background-color: #000000;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.footerb {
+  grid-area: footerb;
+  background-color: #000000;
+  padding: 10px;
+  text-align: center;
+}
+
+
+.tokrow {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    grid-template-areas:
+        'tokname tokaddr';
+    grid-gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+.tokrow:hover {
+    background-color: #008000;
+}
+
+.tokname,
+.tokaddr {
+    margin: auto;
+    text-align: center;
+}
+
+.tokname {
+    grid-area: tokname;
+}
+
+.tokaddr {
+    grid-area: tokaddr;
+}
+
+
+/* ============================================= Grids END ==================================================== */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #283747;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  line-height: 1.4;
+  word-wrap: break-word;
+ }
+
+/* The Close Button for modal */
+.close,
+.closealt {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.closealt:hover,
+.closealt:focus {
+  color: #C0C0C0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ================== modal end =================*/
+
+/*================================================ Game UI editor BEGIN ===================================================*/
+.uicolors {
+    display: grid;
+    grid-template-areas:
+        'col1 col2';
+    grid-column-gap: 10px;
+}
+
+.col1 {
+    grid-area: col1;
+    text-align: center;
+}
+
+.col2 {
+    grid-area: col2;
+    text-align: center;
+}
+
+
+.gameui {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.gameui button {
+    color: #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+
+.gameui button:hover {
+  background-color: green;
+}
+
+.hdr {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.btna {
+    font-size: 36px;
+    width: 150px;
+    padding: 5px 20px;
+    margin: 10px;
+}
+
+.btnb {
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    height: 60px;
+    margin: 10px;
+}
+
+.btnp {
+    font-size: 50px;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.uiinput {
+    width: 170px;
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+    color: inherit;
+    background-color: inherit;
+    -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  border:10px solid transparent;
+}
+
+[type=radio]:checked + img {
+  border-color: green;
+  border-radius: 75px;
+}
+
+.defcoin {
+    width: 240px;
+    height: 240px;
+}
+
+.side {
+    height: 150px;
+    width: 150px;
+}
+
+.tag {
+    height: 20px;
+    width: 20px;
+}  
+
+.gamemessages,
+.prize {
+    text-align: center;
+}
+
+.play,
+.coin,
+.prize,
+.btnamount,
+.amount,
+.btnplay,
+.uifooter {
+    display: block;
+    text-align: center;
+}
+
+.coinarea {
+    width: 700px;
+}
+
+.tab {
+  overflow: hidden;
+  text-align: center;
+}
+
+/*================================================ Game UI editor END ========================*/
+
+/* Responsive layout - makes the columns stack on top of each other instead of next to each other ---------------------------------------*/
+@media (max-width: 800px) {
+  .grid-containerb  {
+    grid-template-areas: 
+    'nav'
+    'subheaderb'
+    'allgames'
+    'create'
+    'footerb';
+  }
+
+button {
+  padding: 3px 12px;
+}
+
+td, th {
+  font-size: 10px;
+}
+
+.tokrow {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        'tokname'
+        'tokaddr';
+    font-size: 14px;
+}
+
+
+.tokenrow {
+    grid-template-columns: 10% 40% 20% 10% 20%;
+    grid-template-areas:
+        'no name supply decimals add'
+        'addresss addresss addresss addresss addresss';
+    font-size: 14px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.salerow {
+    grid-template-columns: 100%;
+    grid-template-areas:
+        'saleno'
+        'saleaddress'
+        'saletoken'
+        'salestatus';
+    font-size: 14px;
+}
+
+/* Responsive layout - for top navbar and header */
+
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  
+  .bar1, .bar2, .bar3 {
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-2px, 8px);
+  transform: rotate(-45deg) translate(-2px, 8px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-10px, -8px);
+  transform: rotate(45deg) translate(-10px, -8px);
+}
+  
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+ 
+.newtkn {
+    grid-template-areas:
+        'newtknhead'
+        'newtknname'
+        'newtknsym'
+        'newtknqty'
+        'newtkndec'
+        'newtknto'
+        'newtknbtn';
+}
+
+.newtkndeftax {
+    grid-template-areas:
+        'newtknhead'
+        'newtknname'
+        'newtknsym'
+        'newtknqty'
+        'newtkndec'
+        'newtkntax1'
+        'newtknaddress1'
+        'newtkntax2'
+        'newtknaddress2'
+        'newtknper'
+        'newtkntotal'
+        'newtknmin'
+        'newtknto'
+        'newtknbtn';
+}
+ 
+.newtkndef {
+    grid-template-areas:
+        'newtknhead'
+        'newtknname'
+        'newtknsym'
+        'newtknqty'
+        'newtkndec'
+        'newtknper'
+        'newtknmin'
+        'newtknto'
+        'newtknbtn';
+}
+
+.newtkncapped {
+    grid-template-areas:
+        'newtknhead'
+        'newtknname'
+        'newtknsym'
+        'newtkncap'
+        'newtkndec'
+        'newtknqty'
+        'newtknto'
+        'newtknbtn';
+}
+
+.nets {
+    grid-template-areas:
+        'nethead'
+        'net1'
+        'net2'
+        'net3'
+        'net4'
+        'net5'
+        'net6';
+}
+
+
+.tokens {
+    grid-template-areas:
+        'tokenshead'
+        'token1'
+        'token2'
+        'token3'
+        'token4'
+        'token5'
+        'token6'
+        'token7'
+        'token8'
+        'token9'
+        'token10'
+        'token11'
+        'token12'
+        'token13'
+        'token14'
+        'token15'
+        'token16'
+        'token17'
+        'token18';
+}
+
+.games {
+    grid-template-areas:
+        'gameshead'
+        'game1'
+        'game2';
+}
+  
+}
+
+

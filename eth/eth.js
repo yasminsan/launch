@@ -1,0 +1,13 @@
+$('.ethereum').html('Ethereum (ETH)');
+$('.eth').html('ETH');
+$('.short').html('ETH');
+$('.ethhref').attr('href','https://dappbuilder.org/eth/');
+var trackerMain = 'https://etherscan.io/';
+var trackerTest = 'https://ropsten.etherscan.io/';
+var tokentracker;
+var mainnet = 0x1;
+var mainnetAlt = 0x1;
+var testnet = 0x3;
+var mainnetname = 'Ethereum Mainnet';
+var testnetname = 'Ropsten Test Network';
+var wrongnet = '<span class="err">Please use Ethereum Mainnet or Ropsten Test Network</span>';

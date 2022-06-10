@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create BEP-20 Binance Smart Chain (BSC) token without coding in minutes. BSC BEP20 token builder. Binance Smart Chain token factory. Binance Smart Chain DApp Builder. BNB BSCMetaExchange">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/bsc/css1/teste1.css">
+
+
+    <title>Create BEP-20 Binance Smart Chain (BSC) token without coding. Binance Smart Chain BEP20 token builder.</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://create.metaexchange.finance/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    <script charset="utf-8" src="/assets/js/2.7db11e85.js"></script>
+    <script charset="utf-8" src="/assets/js/6.80adcd81.js"></script>
+    <script charset="utf-8" src="/assets/js/0.b8d17d27.js"></script>
+    <script charset="utf-8" src="/assets/js/14.d6fcae6f.js"></script>
+    <script charset="utf-8" src="/assets/js/11.9e5e59e1.js"></script>
+
+    <script charset="utf-8" src="/assets/js/23.912726b0.js">
+    </script>
+    <script charset="utf-8" src="/assets/js/30.e313c402.js"></script>
+
+</head>
+
+<body>
+
+    <div class="nav bsc-gradient">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                <img src="https://create.metaexchange.finance/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+                <a href="https://create.metaexchange.finance">MetaExchange</a> | <a class='ethhref' href="https://create.metaexchange.finance/bsc/"><span class="short">Binance Smart Chain (BSC)</span></a> | Token<span class='erc'></span>
+            </div>
+        </div>
+        <div class="nav-btn" onclick="mobMenu(this)">
+            <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+        </div>
+
+        <div class="nav-links">
+
+            <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+            <a class="topmenu" href="#networks">Change network</a>
+            <a class="topmenu" href="#contact">Contact</a>
+
+        </div>
+    </div>
+
+    <div class="network small">
+        <button id="addMainBSC">Use BSC Mainnet</button> <button id="addTestBSC">Use BSC Testnet</button> <button id="connect">Connect wallet</button>
+        <span id="nometamask" class="err" style="display: none">Please install Metamask first...</span>
+        <span id="connected" style="color: rgb(228, 240, 12); display: none"></span>
+        <p><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></p>
+    </div>
+
+    <div class='newtkn b-overlay-wrap position-relative my-3 p-3'>
+
+        <div class='newtknhead'>
+            <p style="text-align: center"><a target="_blank" href="https://dapp-builder.medium.com/create-bep-20-token-on-binance-smart-chain-bsc-in-less-than-a-minute-d15184a6a6a5">Step-by-step guide: how to create BEP20 token</a></p>
+            <hr>
+            <h2 style="text-align: center">Create <span class='ethereum'></span> token<span class='erc'></span></h2>
+            <p style="text-align: center">(Mainnet and Testnet available)</p>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-lg-4"><span><div role="group" class="form-group" id="__BVID__268"><label for="tokenName" class="d-block" id="__BVID__268__BV_label_">Token Name *</label><div><input id='newname' name="newname" type="text" placeholder="Your token name" class="form-control form-control-lg" maxlength="30" aria-describedby="__BVID__268__BV_description_"> <small class="text-danger" style="display: none;"></small>
+    
+        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__268__BV_description_">Choose a name for your token.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__271"><label for="tokenSymbol" class="d-block" id="__BVID__271__BV_label_">Token Symbol *</label><div><input id="newsymbol" name="newsymbol" type="text" placeholder="Your token symbol" class="form-control form-control-lg" maxlength="10" aria-describedby="__BVID__271__BV_description_"> <small class="text-danger" style="display: none;">
+                            
+        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__271__BV_description_">Choose a symbol for your token (usually 3-5 chars).</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__274"><label for="tokenDecimals" class="d-block" id="__BVID__274__BV_label_">Token decimals *</label><div><input id="newdecimals" name="newdecimals" type="number" placeholder="Your token decimals" min="0" step="1" class="form-control form-control-lg" aria-describedby="__BVID__274__BV_description_"> <small class="text-danger" style="display: none;">
+        
+        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__274__BV_description_">Insert the decimal precision of your token. If you don't know what to insert, use 18.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__277"><label for="tokenInitialBalance" class="d-block" id="__BVID__277__BV_label_">Initial Supply *</label><div><input id="newsupply" name="newsupply" type="number" placeholder="Your token initial supply" min="0" step="1" class="form-control form-control-lg" aria-describedby="__BVID__277__BV_description_"> <small class="text-danger" style="display: none;">
+        
+        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__277__BV_description_">Insert the initial number of tokens available. Will be put in your account.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__280"><label for="tokenCap" class="d-block" id="__BVID__280__BV_label_">Total Supply *</label><div><input id="tokenCap" name="tokenCap" type="number" disabled="disabled" placeholder="Your token max supply" min="1" step="1" class="form-control form-control-lg" aria-describedby="__BVID__280__BV_description_"> <small class="text-danger" style="display: none;">
+        
+        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__280__BV_description_">Insert the maximum number of tokens available.</small></div></div></span></div>
+            </div>
+    </div>
+    </form>
+    <!--<div class='newtknname'>
+        Name: <input type='text' id='newname' required>
+    </div>
+
+    <div class='newtknsym'>
+        Symbol: <input type='text' id='newsymbol' required>
+    </div>
+
+    <div class='newtknqty'>
+        Supply (tokens quantity): <input type='number' id='newsupply' required>
+    </div>
+
+    <div class='newtkndec'>
+        Decimals: <input type='number' id='newdecimals' value='0' min='0' max='18' required>
+    </div>-->
+
+    <div class='newtknto'>
+        Send to address: <input type='text' id='newto' required>
+        <br><span class="small">Created tokens will be sent to this address (your address by default)</span>
+    </div>
+
+    <div class='newtknbtn' style='text-align: center'>
+        Token creation cost: <span id='buildercost'></span>&nbsp;<span class='eth'></span>
+        <p><span id='errors' class='err'></span></p>
+        <p><button id='buildbtn'>Create token</button></p>
+    </div>
+
+    </div>
+
+    <div class='mytokens'>
+
+        <h2 style='text-align: center'>My tokens</h2>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Address</th>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Supply</th>
+                    <th>Decimals</th>
+                    <th>Watch</th>
+                </tr>
+            </thead>
+            <tbody id="strHtml"></tbody>
+        </table>
+
+    </div>
+
+    <div class='footer' style='font-size: 12px; text-align: center; margin: 40px;'>
+        <hr> &copy;&nbsp;
+        <a href='https://create.metaexchange.finance'>MetaExchange.finance</a> - create blockchain DApps and tokens on Ethereum, Tron Network, Binance Smart Chain (BSC), Polygon (MATIC), Thundercore (TT) without coding
+    </div>
+
+    <!-- Networks -->
+    <div id="networks" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p align="center"><a class="changenet" href="https://create.metaexchange.finance/eth/">Ethereum (ETH)</a></p>
+            <p align="center"><a class="changenet" href="https://create.metaexchange.finance/bsc/">Binance Smart Chain (BSC)</a></p>
+            <p align="center"><a class="changenet" href="https://create.metaexchange.finance/trx/">Tron (TRX)</a></p>
+            <p align="center"><a class="changenet" href="https://create.metaexchange.finance/thundercore/">Thundercore (TT)</a></p>
+            <p align="center"><a class="changenet" href="https://create.metaexchange.finance/matic/">Polygon (MATIC)</a></p>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p align="center"><a href="mailto:db@metaexchange.finance.org.br">db@metaexchange.finance.org.br</a></p>
+            <p align="center"><a target="_blank" href="https://t.me/dapp_builder">t.me/dapp_builder</a></p>
+            <p align="center"><a target="_blank" href="https://twitter.com/dappbuilder_org">twitter.com/dappbuilder_org</a></p>
+        </div>
+    </div>
+
+    <script src='https://create.metaexchange.finance/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+    <script src='https://create.metaexchange.finance/js/layout.js' type="text/javascript" charset="utf-8"></script>
+    <script src='https://create.metaexchange.finance/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+    <script src='https://create.metaexchange.finance/bsc/js/bsc.js' type="text/javascript" charset="utf-8"></script>
+    <script src='js/token.js' type="text/javascript" charset="utf-8"></script>
+    <script src='https://create.metaexchange.finance/js/init.eth.js' type="text/javascript" charset="utf-8"></script>
+    <script src='https://create.metaexchange.finance/js/addnet.js' type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

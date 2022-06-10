@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)create.metaexchange.finance/token-generator/create/bsc/ -->
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>Create your BEP20 Token on Binance Smart Chain | Token Generator | SmartContracts Tools</title>
+
+    <style type="text/css">
+         :root,
+         :host {
+            --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+            --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+            --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+            --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+            --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+            --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+        }
+        
+        svg:not(:root).svg-inline--fa,
+        svg:not(:host).svg-inline--fa {
+            overflow: visible;
+            box-sizing: content-box;
+        }
+        
+        .svg-inline--fa {
+            display: var(--fa-display, inline-block);
+            height: 1em;
+            overflow: visible;
+            vertical-align: -0.125em;
+        }
+        
+        .svg-inline--fa.fa-2xs {
+            vertical-align: 0.1em;
+        }
+        
+        .svg-inline--fa.fa-xs {
+            vertical-align: 0em;
+        }
+        
+        .svg-inline--fa.fa-sm {
+            vertical-align: -0.0714285705em;
+        }
+        
+        .svg-inline--fa.fa-lg {
+            vertical-align: -0.2em;
+        }
+        
+        .svg-inline--fa.fa-xl {
+            vertical-align: -0.25em;
+        }
+        
+        .svg-inline--fa.fa-2xl {
+            vertical-align: -0.3125em;
+        }
+        
+        .svg-inline--fa.fa-pull-left {
+            margin-right: var(--fa-pull-margin, 0.3em);
+            width: auto;
+        }
+        
+        .svg-inline--fa.fa-pull-right {
+            margin-left: var(--fa-pull-margin, 0.3em);
+            width: auto;
+        }
+        
+        .svg-inline--fa.fa-li {
+            width: var(--fa-li-width, 2em);
+            top: 0.25em;
+        }
+        
+        .svg-inline--fa.fa-fw {
+            width: var(--fa-fw-width, 1.25em);
+        }
+        
+        .fa-layers svg.svg-inline--fa {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        
+        .fa-layers-counter,
+        .fa-layers-text {
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+        }
+        
+        .fa-layers {
+            display: inline-block;
+            height: 1em;
+            position: relative;
+            text-align: center;
+            vertical-align: -0.125em;
+            width: 1em;
+        }
+        
+        .fa-layers svg.svg-inline--fa {
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+        }
+        
+        .fa-layers-text {
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+        }
+        
+        .fa-layers-counter {
+            background-color: var(--fa-counter-background-color, #ff253a);
+            border-radius: var(--fa-counter-border-radius, 1em);
+            box-sizing: border-box;
+            color: var(--fa-inverse, #fff);
+            line-height: var(--fa-counter-line-height, 1);
+            max-width: var(--fa-counter-max-width, 5em);
+            min-width: var(--fa-counter-min-width, 1.5em);
+            overflow: hidden;
+            padding: var(--fa-counter-padding, 0.25em 0.5em);
+            right: var(--fa-right, 0);
+            text-overflow: ellipsis;
+            top: var(--fa-top, 0);
+            -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+            transform: scale(var(--fa-counter-scale, 0.25));
+            -webkit-transform-origin: top right;
+            transform-origin: top right;
+        }
+        
+        .fa-layers-bottom-right {
+            bottom: var(--fa-bottom, 0);
+            right: var(--fa-right, 0);
+            top: auto;
+            -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+            transform: scale(var(--fa-layers-scale, 0.25));
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+        }
+        
+        .fa-layers-bottom-left {
+            bottom: var(--fa-bottom, 0);
+            left: var(--fa-left, 0);
+            right: auto;
+            top: auto;
+            -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+            transform: scale(var(--fa-layers-scale, 0.25));
+            -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+        }
+        
+        .fa-layers-top-right {
+            top: var(--fa-top, 0);
+            right: var(--fa-right, 0);
+            -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+            transform: scale(var(--fa-layers-scale, 0.25));
+            -webkit-transform-origin: top right;
+            transform-origin: top right;
+        }
+        
+        .fa-layers-top-left {
+            left: var(--fa-left, 0);
+            right: auto;
+            top: var(--fa-top, 0);
+            -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+            transform: scale(var(--fa-layers-scale, 0.25));
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+        }
+        
+        .fa-1x {
+            font-size: 1em;
+        }
+        
+        .fa-2x {
+            font-size: 2em;
+        }
+        
+        .fa-3x {
+            font-size: 3em;
+        }
+        
+        .fa-4x {
+            font-size: 4em;
+        }
+        
+        .fa-5x {
+            font-size: 5em;
+        }
+        
+        .fa-6x {
+            font-size: 6em;
+        }
+        
+        .fa-7x {
+            font-size: 7em;
+        }
+        
+        .fa-8x {
+            font-size: 8em;
+        }
+        
+        .fa-9x {
+            font-size: 9em;
+        }
+        
+        .fa-10x {
+            font-size: 10em;
+        }
+        
+        .fa-2xs {
+            font-size: 0.625em;
+            line-height: 0.1em;
+            vertical-align: 0.225em;
+        }
+        
+        .fa-xs {
+            font-size: 0.75em;
+            line-height: 0.0833333337em;
+            vertical-align: 0.125em;
+        }
+        
+        .fa-sm {
+            font-size: 0.875em;
+            line-height: 0.0714285718em;
+            vertical-align: 0.0535714295em;
+        }
+        
+        .fa-lg {
+            font-size: 1.25em;
+            line-height: 0.05em;
+            vertical-align: -0.075em;
+        }
+        
+        .fa-xl {
+            font-size: 1.5em;
+            line-height: 0.0416666682em;
+            vertical-align: -0.125em;
+        }
+        
+        .fa-2xl {
+            font-size: 2em;
+            line-height: 0.03125em;
+            vertical-align: -0.1875em;
+        }
+        
+        .fa-fw {
+            text-align: center;
+            width: 1.25em;
+        }
+        
+        .fa-ul {
+            list-style-type: none;
+            margin-left: var(--fa-li-margin, 2.5em);
+            padding-left: 0;
+        }
+        
+        .fa-ul>li {
+            position: relative;
+        }
+        
+        .fa-li {
+            left: calc(var(--fa-li-width, 2em) * -1);
+            position: absolute;
+            text-align: center;
+            width: var(--fa-li-width, 2em);
+            line-height: inherit;
+        }
+        
+        .fa-border {
+            border-color: var(--fa-border-color, #eee);
+            border-radius: var(--fa-border-radius, 0.1em);
+            border-style: var(--fa-border-style, solid);
+            border-width: var(--fa-border-width, 0.08em);
+            padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+        }
+        
+        .fa-pull-left {
+            float: left;
+            margin-right: var(--fa-pull-margin, 0.3em);
+        }
+        
+        .fa-pull-right {
+            float: right;
+            margin-left: var(--fa-pull-margin, 0.3em);
+        }
+        
+        .fa-beat {
+            -webkit-animation-name: fa-beat;
+            animation-name: fa-beat;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+            animation-timing-function: var(--fa-animation-timing, ease-in-out);
+        }
+        
+        .fa-bounce {
+            -webkit-animation-name: fa-bounce;
+            animation-name: fa-bounce;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+            animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+        }
+        
+        .fa-fade {
+            -webkit-animation-name: fa-fade;
+            animation-name: fa-fade;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+            animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+        }
+        
+        .fa-beat-fade {
+            -webkit-animation-name: fa-beat-fade;
+            animation-name: fa-beat-fade;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+            animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+        }
+        
+        .fa-flip {
+            -webkit-animation-name: fa-flip;
+            animation-name: fa-flip;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+            animation-timing-function: var(--fa-animation-timing, ease-in-out);
+        }
+        
+        .fa-shake {
+            -webkit-animation-name: fa-shake;
+            animation-name: fa-shake;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+            animation-timing-function: var(--fa-animation-timing, linear);
+        }
+        
+        .fa-spin {
+            -webkit-animation-name: fa-spin;
+            animation-name: fa-spin;
+            -webkit-animation-delay: var(--fa-animation-delay, 0);
+            animation-delay: var(--fa-animation-delay, 0);
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 2s);
+            animation-duration: var(--fa-animation-duration, 2s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+            animation-timing-function: var(--fa-animation-timing, linear);
+        }
+        
+        .fa-spin-reverse {
+            --fa-animation-direction: reverse;
+        }
+        
+        .fa-pulse,
+        .fa-spin-pulse {
+            -webkit-animation-name: fa-spin;
+            animation-name: fa-spin;
+            -webkit-animation-direction: var(--fa-animation-direction, normal);
+            animation-direction: var(--fa-animation-direction, normal);
+            -webkit-animation-duration: var(--fa-animation-duration, 1s);
+            animation-duration: var(--fa-animation-duration, 1s);
+            -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+            -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+            animation-timing-function: var(--fa-animation-timing, steps(8));
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .fa-beat,
+            .fa-bounce,
+            .fa-fade,
+            .fa-beat-fade,
+            .fa-flip,
+            .fa-pulse,
+            .fa-shake,
+            .fa-spin,
+            .fa-spin-pulse {
+                -webkit-animation-delay: -1ms;
+                animation-delay: -1ms;
+                -webkit-animation-duration: 1ms;
+                animation-duration: 1ms;
+                -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+                transition-delay: 0s;
+                transition-duration: 0s;
+            }
+        }
+        
+        @-webkit-keyframes fa-beat {
+            0%,
+            90% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            45% {
+                -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+                transform: scale(var(--fa-beat-scale, 1.25));
+            }
+        }
+        
+        @keyframes fa-beat {
+            0%,
+            90% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            45% {
+                -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+                transform: scale(var(--fa-beat-scale, 1.25));
+            }
+        }
+        
+        @-webkit-keyframes fa-bounce {
+            0% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+            10% {
+                -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+                transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            }
+            30% {
+                -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+                transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            }
+            50% {
+                -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+                transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            }
+            57% {
+                -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+                transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            }
+            64% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+            100% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+        }
+        
+        @keyframes fa-bounce {
+            0% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+            10% {
+                -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+                transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            }
+            30% {
+                -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+                transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            }
+            50% {
+                -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+                transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            }
+            57% {
+                -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+                transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            }
+            64% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+            100% {
+                -webkit-transform: scale(1, 1) translateY(0);
+                transform: scale(1, 1) translateY(0);
+            }
+        }
+        
+        @-webkit-keyframes fa-fade {
+            50% {
+                opacity: var(--fa-fade-opacity, 0.4);
+            }
+        }
+        
+        @keyframes fa-fade {
+            50% {
+                opacity: var(--fa-fade-opacity, 0.4);
+            }
+        }
+        
+        @-webkit-keyframes fa-beat-fade {
+            0%,
+            100% {
+                opacity: var(--fa-beat-fade-opacity, 0.4);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+                transform: scale(var(--fa-beat-fade-scale, 1.125));
+            }
+        }
+        
+        @keyframes fa-beat-fade {
+            0%,
+            100% {
+                opacity: var(--fa-beat-fade-opacity, 0.4);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+                transform: scale(var(--fa-beat-fade-scale, 1.125));
+            }
+        }
+        
+        @-webkit-keyframes fa-flip {
+            50% {
+                -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+                transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            }
+        }
+        
+        @keyframes fa-flip {
+            50% {
+                -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+                transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            }
+        }
+        
+        @-webkit-keyframes fa-shake {
+            0% {
+                -webkit-transform: rotate(-15deg);
+                transform: rotate(-15deg);
+            }
+            4% {
+                -webkit-transform: rotate(15deg);
+                transform: rotate(15deg);
+            }
+            8%,
+            24% {
+                -webkit-transform: rotate(-18deg);
+                transform: rotate(-18deg);
+            }
+            12%,
+            28% {
+                -webkit-transform: rotate(18deg);
+                transform: rotate(18deg);
+            }
+            16% {
+                -webkit-transform: rotate(-22deg);
+                transform: rotate(-22deg);
+            }
+            20% {
+                -webkit-transform: rotate(22deg);
+                transform: rotate(22deg);
+            }
+            32% {
+                -webkit-transform: rotate(-12deg);
+                transform: rotate(-12deg);
+            }
+            36% {
+                -webkit-transform: rotate(12deg);
+                transform: rotate(12deg);
+            }
+            40%,
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes fa-shake {
+            0% {
+                -webkit-transform: rotate(-15deg);
+                transform: rotate(-15deg);
+            }
+            4% {
+                -webkit-transform: rotate(15deg);
+                transform: rotate(15deg);
+            }
+            8%,
+            24% {
+                -webkit-transform: rotate(-18deg);
+                transform: rotate(-18deg);
+            }
+            12%,
+            28% {
+                -webkit-transform: rotate(18deg);
+                transform: rotate(18deg);
+            }
+            16% {
+                -webkit-transform: rotate(-22deg);
+                transform: rotate(-22deg);
+            }
+            20% {
+                -webkit-transform: rotate(22deg);
+                transform: rotate(22deg);
+            }
+            32% {
+                -webkit-transform: rotate(-12deg);
+                transform: rotate(-12deg);
+            }
+            36% {
+                -webkit-transform: rotate(12deg);
+                transform: rotate(12deg);
+            }
+            40%,
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+        }
+        
+        @-webkit-keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        .fa-rotate-90 {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        
+        .fa-rotate-180 {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        
+        .fa-rotate-270 {
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+        
+        .fa-flip-horizontal {
+            -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+        }
+        
+        .fa-flip-vertical {
+            -webkit-transform: scale(1, -1);
+            transform: scale(1, -1);
+        }
+        
+        .fa-flip-both,
+        .fa-flip-horizontal.fa-flip-vertical {
+            -webkit-transform: scale(-1, -1);
+            transform: scale(-1, -1);
+        }
+        
+        .fa-rotate-by {
+            -webkit-transform: rotate(var(--fa-rotate-angle, none));
+            transform: rotate(var(--fa-rotate-angle, none));
+        }
+        
+        .fa-stack {
+            display: inline-block;
+            vertical-align: middle;
+            height: 2em;
+            position: relative;
+            width: 2.5em;
+        }
+        
+        .fa-stack-1x,
+        .fa-stack-2x {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: var(--fa-stack-z-index, auto);
+        }
+        
+        .svg-inline--fa.fa-stack-1x {
+            height: 1em;
+            width: 1.25em;
+        }
+        
+        .svg-inline--fa.fa-stack-2x {
+            height: 2em;
+            width: 2.5em;
+        }
+        
+        .fa-inverse {
+            color: var(--fa-inverse, #fff);
+        }
+        
+        .sr-only,
+        .fa-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        .sr-only-focusable:not(:focus),
+        .fa-sr-only-focusable:not(:focus) {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        .svg-inline--fa .fa-primary {
+            fill: var(--fa-primary-color, currentColor);
+            opacity: var(--fa-primary-opacity, 1);
+        }
+        
+        .svg-inline--fa .fa-secondary {
+            fill: var(--fa-secondary-color, currentColor);
+            opacity: var(--fa-secondary-opacity, 0.4);
+        }
+        
+        .svg-inline--fa.fa-swap-opacity .fa-primary {
+            opacity: var(--fa-secondary-opacity, 0.4);
+        }
+        
+        .svg-inline--fa.fa-swap-opacity .fa-secondary {
+            opacity: var(--fa-primary-opacity, 1);
+        }
+        
+        .svg-inline--fa mask .fa-primary,
+        .svg-inline--fa mask .fa-secondary {
+            fill: black;
+        }
+        
+        .fad.fa-inverse,
+        .fa-duotone.fa-inverse {
+            color: var(--fa-inverse, #fff);
+        }
+    </style>
+    <link rel="shortcut icon" href="create.metaexchange.finance/favicon.ico">
+    <script src="/assets/js/640710157028819" async=""></script>
+    <script async="" src="/assets/js/fbevents.js"></script>
+    <script async="" src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/web3.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="preload" href="/assets/css/1.styles.e83a7437.css" as="style">
+    <link rel="preload" href="/assets/js/app.b1460cf2.js" as="script">
+    <link rel="preload" href="/assets/js/12.3d6110ab.js" as="script">
+    <link rel="preload" href="/assets/js/10.ddc53c2f.js" as="script">
+    <link rel="preload" href="/assets/js/3.e7a4d217.js" as="script">
+    <link rel="prefetch" href="/assets/js/0.b8d17d27.js">
+    <link rel="prefetch" href="/assets/js/11.9e5e59e1.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/13.4e285870.js">
+    <link rel="prefetch" href="/assets/js/14.d6fcae6f.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/15.37298502.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/16.bd085cdd.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/17.bb7c5bb4.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/18.74e66d1f.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/19.95873a16.js">
+    <link rel="prefetch" href="/assets/js/2.7db11e85.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/20.eef3e79c.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/21.854e886b.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/22.1314e276.js">
+    <link rel="prefetch" href="/assets/js/23.912726b0.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/24.66947998.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/25.db1e687d.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/26.1530ed8e.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/27.4fb6b8e6.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/28.ed6c8d10.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/29.e5922550.js">
+    <link rel="prefetch" href="/assets/js/30.e313c402.js">
+    <link rel="prefetch" href="/assets/js/31.57ba6165.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/32.2085272b.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/33.385acca6.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/34.f50344c0.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/35.d2577c21.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/36.a9d080f4.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/37.3c0e4c27.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/38.8faa4396.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/39.7573d0ae.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/40.d8d9a578.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/41.7425fce3.js">
+    <link rel="prefetch" href="/assets/js/42.7c6bc773.js">
+    <link rel="prefetch" href="/assets/js/43.093aa8ef.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/5.06012d7c.js">
+    <link rel="prefetch" href="/assets/js/6.80adcd81.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/7.003e240b.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/8.ae4fc431.js">
+    <link rel="prefetch" href="create.metaexchange.finance/assets/js/9.1276b026.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.e83a7437.css">
+    <style data-emotion=""></style>
+    <script charset="utf-8" src="/assets/js/31.57ba6165.js"></script>
+    <script charset="utf-8" src="/assets/js/43.093aa8ef.js"></script>
+    <script charset="utf-8" src="/assets/js/42.7c6bc773.js"></script>
+    <style type="text/css">
+        .Cookie {
+            position: fixed;
+            overflow: hidden;
+            box-sizing: border-box;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-direction: column
+        }
+        
+        .Cookie>* {
+            margin: .9375rem 0;
+            align-self: center
+        }
+        
+        @media screen and (min-width: 48rem) {
+            .Cookie {
+                flex-flow: row
+            }
+            .Cookie>* {
+                margin: 0
+            }
+        }
+        
+        .Cookie--top {
+            top: 0;
+            left: 0;
+            right: 0
+        }
+        
+        .Cookie--bottom {
+            bottom: 0;
+            left: 0;
+            right: 0
+        }
+        
+        .Cookie__buttons {
+            display: flex;
+            flex-direction: column
+        }
+        
+        .Cookie__buttons>* {
+            margin: .3125rem 0
+        }
+        
+        @media screen and (min-width: 48rem) {
+            .Cookie__buttons {
+                flex-direction: row
+            }
+            .Cookie__buttons>* {
+                margin: 0 .9375rem
+            }
+        }
+        
+        .Cookie__button {
+            cursor: pointer;
+            align-self: center;
+            white-space: nowrap
+        }
+        
+        .Cookie__declineButton {
+            cursor: pointer;
+            align-self: center;
+            white-space: nowrap
+        }
+        
+        .Cookie--base {
+            background: #F1F1F1;
+            color: #232323;
+            padding: 1.250em
+        }
+        
+        .Cookie--base .Cookie__button {
+            background: #97D058;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--base .Cookie__button:hover {
+            background: #7ebf36
+        }
+        
+        .Cookie--base .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #727272;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--base .Cookie__button--decline:hover {
+            background: #cbcbcb
+        }
+        
+        .Cookie--base--rounded {
+            background: #F1F1F1;
+            color: #232323;
+            padding: 1.250em
+        }
+        
+        .Cookie--base--rounded .Cookie__button {
+            background: #97D058;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--base--rounded .Cookie__button:hover {
+            background: #7ebf36
+        }
+        
+        .Cookie--base--rounded .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #727272;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--base--rounded .Cookie__button--decline:hover {
+            background: #cbcbcb
+        }
+        
+        .Cookie--blood-orange {
+            background: #424851;
+            color: #fff;
+            padding: 1.250em
+        }
+        
+        .Cookie--blood-orange .Cookie__button {
+            background: #E76A68;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--blood-orange .Cookie__button:hover {
+            background: #e03f3c
+        }
+        
+        .Cookie--blood-orange .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #000;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--blood-orange .Cookie__button--decline:hover {
+            background: #202327
+        }
+        
+        .Cookie--blood-orange--rounded {
+            background: #424851;
+            color: #fff;
+            padding: 1.250em
+        }
+        
+        .Cookie--blood-orange--rounded .Cookie__button {
+            background: #E76A68;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--blood-orange--rounded .Cookie__button:hover {
+            background: #e03f3c
+        }
+        
+        .Cookie--blood-orange--rounded .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #000;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--blood-orange--rounded .Cookie__button--decline:hover {
+            background: #202327
+        }
+        
+        .Cookie--dark-lime {
+            background: #424851;
+            color: #fff;
+            padding: 1.250em
+        }
+        
+        .Cookie--dark-lime .Cookie__button {
+            background: #97D058;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--dark-lime .Cookie__button:hover {
+            background: #7ebf36
+        }
+        
+        .Cookie--dark-lime .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #000;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--dark-lime .Cookie__button--decline:hover {
+            background: #202327
+        }
+        
+        .Cookie--dark-lime--rounded {
+            background: #424851;
+            color: #fff;
+            padding: 1.250em
+        }
+        
+        .Cookie--dark-lime--rounded .Cookie__button {
+            background: #97D058;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--dark-lime--rounded .Cookie__button:hover {
+            background: #7ebf36
+        }
+        
+        .Cookie--dark-lime--rounded .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #000;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--dark-lime--rounded .Cookie__button--decline:hover {
+            background: #202327
+        }
+        
+        .Cookie--royal {
+            background: #FBC227;
+            color: #232323;
+            padding: 1.250em
+        }
+        
+        .Cookie--royal .Cookie__button {
+            background: #726CEA;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--royal .Cookie__button:hover {
+            background: #473fe4
+        }
+        
+        .Cookie--royal .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #221901;
+            border-radius: 0;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--royal .Cookie__button--decline:hover {
+            background: #d29a04
+        }
+        
+        .Cookie--royal--rounded {
+            background: #FBC227;
+            color: #232323;
+            padding: 1.250em
+        }
+        
+        .Cookie--royal--rounded .Cookie__button {
+            background: #726CEA;
+            padding: 0.625em 3.125em;
+            color: #fff;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--royal--rounded .Cookie__button:hover {
+            background: #473fe4
+        }
+        
+        .Cookie--royal--rounded .Cookie__button--decline {
+            background: transparent;
+            padding: 0.625em 3.125em;
+            color: #221901;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1em
+        }
+        
+        .Cookie--royal--rounded .Cookie__button--decline:hover {
+            background: #d29a04
+        }
+        
+        .slideFromTop-enter,
+        .slideFromTop-leave-to {
+            transform: translate(0px, -12.5em)
+        }
+        
+        .slideFromTop-enter-to,
+        .slideFromTop-leave {
+            transform: translate(0px, 0px)
+        }
+        
+        .slideFromBottom-enter,
+        .slideFromBottom-leave-to {
+            transform: translate(0px, 12.5em)
+        }
+        
+        .slideFromBottom-enter-to,
+        .slideFromBottom-leave {
+            transform: translate(0px, 0px)
+        }
+        
+        .slideFromBottom-enter-active,
+        .slideFromBottom-leave-active,
+        .slideFromTop-enter-active,
+        .slideFromTop-leave-active {
+            transition: transform .4s ease-in
+        }
+        
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s
+        }
+        
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0
+        }
+    </style>
+    <style type="text/css">
+        .VueCarousel-navigation-button[data-v-453ad8cd] {
+            position: absolute;
+            top: 50%;
+            box-sizing: border-box;
+            color: #000;
+            text-decoration: none;
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .VueCarousel-navigation-button[data-v-453ad8cd]:focus {
+            outline: 1px solid lightblue;
+        }
+        
+        .VueCarousel-navigation-next[data-v-453ad8cd] {
+            right: 0;
+            transform: translateY(-50%) translateX(100%);
+            font-family: "system";
+        }
+        
+        .VueCarousel-navigation-prev[data-v-453ad8cd] {
+            left: 0;
+            transform: translateY(-50%) translateX(-100%);
+            font-family: "system";
+        }
+        
+        .VueCarousel-navigation--disabled[data-v-453ad8cd] {
+            opacity: 0.5;
+            cursor: default;
+        }
+        /* Define the "system" font family */
+        
+        @font-face {
+            font-family: system;
+            font-style: normal;
+            font-weight: 300;
+            src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Symbol"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+        }
+    </style>
+    <style type="text/css">
+        .VueCarousel-pagination[data-v-438fd353] {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .VueCarousel-pagination--top-overlay[data-v-438fd353] {
+            position: absolute;
+            top: 0;
+        }
+        
+        .VueCarousel-pagination--bottom-overlay[data-v-438fd353] {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .VueCarousel-dot-container[data-v-438fd353] {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .VueCarousel-dot[data-v-438fd353] {
+            display: inline-block;
+            cursor: pointer;
+            appearance: none;
+            border: none;
+            background-clip: content-box;
+            box-sizing: content-box;
+            padding: 0;
+            border-radius: 100%;
+            outline: none;
+        }
+        
+        .VueCarousel-dot[data-v-438fd353]:focus {
+            outline: 1px solid lightblue;
+        }
+    </style>
+    <style type="text/css">
+        .VueCarousel-slide {
+            flex-basis: inherit;
+            flex-grow: 0;
+            flex-shrink: 0;
+            user-select: none;
+            backface-visibility: hidden;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            outline: none;
+        }
+        
+        .VueCarousel-slide-adjustableHeight {
+            display: table;
+            flex-basis: auto;
+            width: 100%;
+        }
+    </style>
+    <style type="text/css">
+        .VueCarousel {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .VueCarousel--reverse {
+            flex-direction: column-reverse;
+        }
+        
+        .VueCarousel-wrapper {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .VueCarousel-inner {
+            display: flex;
+            flex-direction: row;
+            backface-visibility: hidden;
+        }
+        
+        .VueCarousel-inner--center {
+            justify-content: center;
+        }
+    </style>
+    <script charset="utf-8" src="/assets/js/23.912726b0.js"></script>
+    <script charset="utf-8" src="/assets/js/30.e313c402.js"></script>
+    <meta name="description" content="Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable, Operable BEP20 Token on Binance Smart Chain. No login. No setup. No coding required.">
+    <meta property="twitter:title" content="Create your BEP20 Token on Binance Smart Chain | Token Generator | SmartContracts Tools">
+    <meta property="og:title" content="Create your BEP20 Token on Binance Smart Chain | Token Generator | SmartContracts Tools">
+    <meta property="twitter:description" content="Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable, Operable BEP20 Token on Binance Smart Chain. No login. No setup. No coding required.">
+    <meta property="og:description" content="Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable, Operable BEP20 Token on Binance Smart Chain. No login. No setup. No coding required.">
+    <meta property="og:url" content="create.metaexchange.finance/token-generator/create/bsc/">
+    <meta property="og:image" content="create.metaexchange.finance/assets/images/social/sct-token-generator.png">
+    <meta property="twitter:image" content="create.metaexchange.finance/assets/images/social/sct-token-generator.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="jY1I9xJpJgRsED3X5BkUoQVTZpvH19pMiG_Bs7TD2sQ">
+    <meta name="msvalidate.01" content="2222C2A799471867FB1E317854E92631">
+    <meta name="facebook-domain-verification" content="k1q2e0j9epiupxtlbslr4hrcpjmsvk">
+    <meta name="robots" content="notranslate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <link href="create.metaexchange.finance/token-generator/create/bsc/" rel="canonical">
+    <script charset="utf-8" src="/assets/js/2.7db11e85.js"></script>
+    <script charset="utf-8" src="/assets/js/6.80adcd81.js"></script>
+    <script charset="utf-8" src="/assets/js/0.b8d17d27.js"></script>
+    <script charset="utf-8" src="/assets/js/14.d6fcae6f.js"></script>
+    <script charset="utf-8" src="/assets/js/11.9e5e59e1.js"></script>
+</head>
+
+<body class="vsc-initialized">
+    <div class="page-wrapper">
+        <nav class="navbar sticky-top navbar-light bg-white navbar-expand-md is-sticky"><button type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed" aria-expanded="false" aria-controls="nav_collapse" style="overflow-anchor: none;"><span class="navbar-toggler-icon"></span></button>
+            <a href="create.metaexchange.finance/"
+                class="navbar-brand router-link-active" target="_self"><img src="/assets/js/smartcontractstools-transparent.png" width="32" class="img-thumbnail rounded-circle" style="background: rgb(57, 127, 160);"> SmartContracts Tools
+            </a>
+            <div id="nav_collapse" class="navbar-collapse collapse" style="display: none;">
+                <ul class="navbar-nav">
+                    <li class="nav-item b-nav-dropdown dropdown" id="__BVID__29"><a role="button" aria-haspopup="true" aria-expanded="false" href="create.metaexchange.finance/token-generator/create/bsc/#" target="_self" class="nav-link dropdown-toggle" id="__BVID__29__BV_toggle_" aria-controls="__BVID__29__BV_toggle_menu_"><span>Token Generator</span></a>
+                        <ul
+                            tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__29__BV_toggle_" id="__BVID__29__BV_toggle_menu_">
+                            <li role="presentation">
+                                <a role="menuitem" href="create.metaexchange.finance/token-generator/" target="_self" class="dropdown-item">
+                                    <div class="py-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi text-info" style="width: 24px; height: 24px;"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg>                                        <span class="px-3">Discover Token Generator</span></div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <hr role="separator" aria-orientation="horizontal" class="dropdown-divider">
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="create.metaexchange.finance/token-generator/ethereum/" target="_self" tabindex="-1" aria-disabled="true" class="dropdown-item disabled">
+                                    <div class="py-2"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="cryptoicon--eth"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="none" fill-rule="evenodd"><circle cx="16" cy="16" r="16" fill="#627EEA"></circle><g fill="#FFF" fill-rule="nonzero"><path fill-opacity=".602" d="M16.498 4v8.87l7.497 3.35z"></path><path d="M16.498 4L9 16.22l7.498-3.35z"></path><path fill-opacity=".602" d="M16.498 21.968v6.027L24 17.616z"></path><path d="M16.498 27.995v-6.028L9 17.616z"></path><path fill-opacity=".2" d="M16.498 20.573l7.497-4.353-7.497-3.348z"></path><path fill-opacity=".602" d="M9 16.22l7.498 4.353v-7.701z"></path></g></g></svg></svg>
+                                        <span class="px-3">Ethereum</span></div>
+                                </a>
+                            </li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/token-generator/create/ethereum/" target="_self" class="dropdown-item">
+          Create ERC20 on Ethereum
+        </a></li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/ethereum/" target="_self" class="dropdown-item">
+          Pricing and Features
+        </a></li>
+                            <li role="presentation">
+                                <hr role="separator" aria-orientation="horizontal" class="dropdown-divider">
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/polygon/" target="_self" tabindex="-1" aria-disabled="true" class="dropdown-item disabled">
+                                    <div class="py-2"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="cryptoicon--matic"><g fill="none"><circle fill="#6F41D8" cx="16" cy="16" r="16"></circle><path d="M21.092 12.693c-.369-.215-.848-.215-1.254 0l-2.879 1.654-1.955 1.078-2.879 1.653c-.369.216-.848.216-1.254 0l-2.288-1.294c-.369-.215-.627-.61-.627-1.042V12.19c0-.431.221-.826.627-1.042l2.25-1.258c.37-.216.85-.216 1.256 0l2.25 1.258c.37.216.628.611.628 1.042v1.654l1.955-1.115v-1.653a1.16 1.16 0 00-.627-1.042l-4.17-2.372c-.369-.216-.848-.216-1.254 0l-4.244 2.372A1.16 1.16 0 006 11.076v4.78c0 .432.221.827.627 1.043l4.244 2.372c.369.215.849.215 1.254 0l2.879-1.618 1.955-1.114 2.879-1.617c.369-.216.848-.216 1.254 0l2.251 1.258c.37.215.627.61.627 1.042v2.552c0 .431-.22.826-.627 1.042l-2.25 1.294c-.37.216-.85.216-1.255 0l-2.251-1.258c-.37-.216-.628-.611-.628-1.042v-1.654l-1.955 1.115v1.653c0 .431.221.827.627 1.042l4.244 2.372c.369.216.848.216 1.254 0l4.244-2.372c.369-.215.627-.61.627-1.042v-4.78a1.16 1.16 0 00-.627-1.042l-4.28-2.409z" fill="#FFF"></path></g></svg>                                        <span class="px-3">Polygon</span></div>
+                                </a>
+                            </li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/token-generator/create/polygon/" target="_self" class="dropdown-item">
+          Create ERC20 on Polygon
+        </a></li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/polygon/" target="_self" class="dropdown-item">
+          Pricing and Features
+        </a></li>
+                            <li role="presentation">
+                                <hr role="separator" aria-orientation="horizontal" class="dropdown-divider">
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/bsc/" target="_self" tabindex="-1" aria-disabled="true" class="dropdown-item disabled">
+                                    <div class="py-2"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="cryptoicon--bnb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="none"><circle cx="16" cy="16" r="16" fill="#F3BA2F"></circle><path fill="#FFF" d="M12.116 14.404L16 10.52l3.886 3.886 2.26-2.26L16 6l-6.144 6.144 2.26 2.26zM6 16l2.26-2.26L10.52 16l-2.26 2.26L6 16zm6.116 1.596L16 21.48l3.886-3.886 2.26 2.259L16 26l-6.144-6.144-.003-.003 2.263-2.257zM21.48 16l2.26-2.26L26 16l-2.26 2.26L21.48 16zm-3.188-.002h.002V16L16 18.294l-2.291-2.29-.004-.004.004-.003.401-.402.195-.195L16 13.706l2.293 2.293z"></path></g></svg></svg>
+                                        <span class="px-3">Binance Smart Chain</span></div>
+                                </a>
+                            </li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/token-generator/create/bsc/" target="_self" class="dropdown-item active">
+          Create BEP20 on BSC
+        </a></li>
+                            <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/bsc/" target="_self" class="dropdown-item">
+          Pricing and Features
+        </a></li>
+                            <li role="presentation">
+                                <hr role="separator" aria-orientation="horizontal" class="dropdown-divider">
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="create.metaexchange.finance/watch-token/token-generator/docs/" target="_self" class="dropdown-item">
+                                    <div class="py-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="file code" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-file-code b-icon bi text-info" style="width: 24px; height: 24px;"><g><path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"></path><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></g></svg>                                        <span class="px-3">Documentation</span></div>
+                                </a>
+                            </li>
+                </ul>
+                </li>
+                <li class="nav-item b-nav-dropdown dropdown" id="__BVID__56"><a role="button" aria-haspopup="true" aria-expanded="false" href="create.metaexchange.finance/token-generator/create/bsc/#" target="_self" class="nav-link dropdown-toggle" id="__BVID__56__BV_toggle_" aria-controls="__BVID__56__BV_toggle_menu_"><span>Token Watcher</span></a>
+                    <ul
+                        tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__56__BV_toggle_" id="__BVID__56__BV_toggle_menu_">
+                        <li role="presentation">
+                            <a role="menuitem" href="create.metaexchange.finance/token-watcher/" target="_self" class="dropdown-item">
+                                <div class="py-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi text-primary" style="width: 24px; height: 24px;"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg>                                    <span class="px-3">Discover Token Watcher</span></div>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <hr role="separator" aria-orientation="horizontal" class="dropdown-divider">
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/token-watcher/create/" target="_self" class="dropdown-item">Create
+          Token Page
+        </a></li>
+                        </ul>
+                </li>
+                <li class="nav-item b-nav-dropdown dropdown" id="__BVID__62"><a role="button" aria-haspopup="true" aria-expanded="false" href="create.metaexchange.finance/watch-token/token-generator/create/bsc/#" target="_self" class="nav-link dropdown-toggle" id="__BVID__62__BV_toggle_" aria-controls="__BVID__62__BV_toggle_menu_"><span>Utilities</span></a>
+                    <ul
+                        tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__62__BV_toggle_" id="__BVID__62__BV_toggle_menu_">
+                        <li role="presentation"><a role="menuitem" href="create.metaexchange.finance/utilities/coin-history/" target="_self" class="dropdown-item">
+          Coin History
+        </a></li>
+                        </ul>
+                </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <div class="jumbotron mb-0 text-center jumbotron-fluid bsc-gradient">
+                <div class="container">
+                    <div class="display-3"><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="cryptoicon--bnb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" fill="#fff" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm-3.884-17.596L16 10.52l3.886 3.886 2.26-2.26L16 6l-6.144 6.144 2.26 2.26zM6 16l2.26 2.26L10.52 16l-2.26-2.26L6 16zm6.116 1.596l-2.263 2.257.003.003L16 26l6.146-6.146v-.001l-2.26-2.26L16 21.48l-3.884-3.884zM21.48 16l2.26 2.26L26 16l-2.26-2.26L21.48 16zm-3.188-.002h.001L16 13.706 14.305 15.4l-.195.195-.401.402-.004.003.004.003 2.29 2.291 2.294-2.293.001-.001-.002-.001z"></path></svg></svg>
+                        <h4 class="mt-3">Binance Smart Chain - Mainnet</h4>
+                    </div>
+                    <p class="lead">
+                        <hr>
+                        <h1 class="display-3">Create your BEP20 Token</h1>
+                        <p>
+                            Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable, Operable BEP20 Token on Binance Smart Chain.<br> No login. No setup. No coding required.
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <div id="token-generator" class="row mx-0">
+                <div class="mb-3 col-lg-12 col-xl-10 offset-xl-1">
+                    <!---->
+                    <!---->
+                    <div class="b-overlay-wrap position-relative my-3 p-3" id="token-details">
+                        <div class="my-3">
+                            <h4>
+                                Token Details<br> <small class="text-muted">Enter token details and choose your network</small></h4>
+                            <hr>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-4"><span><div role="group" class="form-group" id="__BVID__268"><label for="tokenName" class="d-block" id="__BVID__268__BV_label_">Token Name *</label><div><input id="tokenName" name="tokenName" type="text" placeholder="Your token name" class="form-control form-control-lg" maxlength="30" aria-describedby="__BVID__268__BV_description_"> <small class="text-danger" style="display: none;">
+                      
+                    </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__268__BV_description_">Choose a name for your token.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__271"><label for="tokenSymbol" class="d-block" id="__BVID__271__BV_label_">Token Symbol *</label><div><input id="tokenSymbol" name="tokenSymbol" type="text" placeholder="Your token symbol" class="form-control form-control-lg" maxlength="10" aria-describedby="__BVID__271__BV_description_"> <small class="text-danger" style="display: none;">
+                      
+                    </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__271__BV_description_">Choose a symbol for your token (usually 3-5 chars).</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__274"><label for="tokenDecimals" class="d-block" id="__BVID__274__BV_label_">Token decimals *</label><div><input id="tokenDecimals" name="tokenDecimals" type="number" disabled="disabled" placeholder="Your token decimals" min="0" step="1" class="form-control form-control-lg" aria-describedby="__BVID__274__BV_description_"> <small class="text-danger" style="display: none;">
+                      
+                    </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__274__BV_description_">Insert the decimal precision of your token. If you don't know what to insert, use 18.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__277"><label for="tokenInitialBalance" class="d-block" id="__BVID__277__BV_label_">Initial Supply *</label><div><input id="tokenInitialBalance" name="tokenInitialBalance" type="number" placeholder="Your token initial supply" min="0" step="1" class="form-control form-control-lg" aria-describedby="__BVID__277__BV_description_"> <small class="text-danger" style="display: none;">
+                      
+                    </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__277__BV_description_">Insert the initial number of tokens available. Will be put in your account.</small></div></div></span> <span><div role="group" class="form-group" id="__BVID__280"><label for="tokenCap" class="d-block" id="__BVID__280__BV_label_">Total Supply *</label><div><input id="tokenCap" name="tokenCap" type="number" disabled="disabled" placeholder="Your token max supply" min="1" step="1" class="form-control form-control-lg" aria-describedby="__BVID__280__BV_description_"> <small class="text-danger" style="display: none;">
+                      
+                    </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__280__BV_description_">Insert the maximum number of tokens available.</small></div></div></span></div>
+                                <div class="col-lg-4">
+                                    <div role="group" class="form-group" id="__BVID__282"><label for="supplyType" class="d-block" id="__BVID__282__BV_label_">Supply Type</label>
+                                        <div><select id="supplyType" disabled="disabled" class="custom-select custom-select-lg" aria-describedby="__BVID__282__BV_description_"><option value="10k">
+                      10k
+                    </option><option value="Fixed">
+                      Fixed
+                    </option><option value="Unlimited">
+                      Unlimited
+                    </option><option value="Capped">
+                      Capped
+                    </option></select>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__282__BV_description_">10k, Fixed, Unlimited, Capped</small></div>
+                                    </div>
+                                    <div role="group" class="form-group" id="__BVID__284"><label for="accessType" class="d-block" id="__BVID__284__BV_label_">Access Type</label>
+                                        <div><select id="accessType" disabled="disabled" class="custom-select custom-select-lg" aria-describedby="__BVID__284__BV_description_"><option value="None">
+                      None
+                    </option><option value="Ownable">
+                      Ownable
+                    </option><option value="Role Based">
+                      Role Based
+                    </option></select>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__284__BV_description_">None, Ownable, Role Based</small></div>
+                                    </div>
+                                    <div role="group" class="form-group" id="__BVID__286"><label for="transferType" class="d-block" id="__BVID__286__BV_label_">Transfer Type</label>
+                                        <div><select id="transferType" disabled="disabled" class="custom-select custom-select-lg" aria-describedby="__BVID__286__BV_description_"><option value="Unstoppable">
+                      Unstoppable
+                    </option><option value="Pausable">
+                      Pausable
+                    </option></select>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__286__BV_description_">Unstoppable, Pausable</small></div>
+                                    </div>
+                                    <fieldset class="form-group" id="__BVID__288">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__289"><label class="custom-control-label" for="__BVID__289">
+                    Verified Source Code
+                  </label></div>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__288__BV_description_">Your Token Source Code will be automatically verified on BscScan. Only works on Mainnet.</small></div>
+                                    </fieldset>
+                                    <fieldset class="form-group" id="__BVID__290">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__291"><label class="custom-control-label" for="__BVID__291">
+                    Remove Copyright
+                  </label></div>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__290__BV_description_">Remove the link pointing to this page from your contract.</small></div>
+                                    </fieldset>
+                                    <fieldset class="form-group" id="__BVID__292">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__293"><label class="custom-control-label" for="__BVID__293">
+                    Burnable
+                  </label></div>
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-group" id="__BVID__294">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__295"><label class="custom-control-label" for="__BVID__295">
+                    Mintable
+                  </label></div>
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-group" id="__BVID__296">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__297"><label class="custom-control-label" for="__BVID__297">
+                    Operable
+                  </label></div>
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-group" id="__BVID__298">
+                                        <!---->
+                                        <div>
+                                            <div class="custom-control custom-switch b-custom-control-sm"><input type="checkbox" disabled="disabled" class="custom-control-input" value="true" id="__BVID__299"><label class="custom-control-label" for="__BVID__299">
+                    Token Recover
+                  </label></div>
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div role="group" class="form-group" id="__BVID__300"><label for="tokenType" class="d-block" id="__BVID__300__BV_label_">Token Type *</label>
+                                        <div><select id="tokenType" class="custom-select custom-select-lg" aria-describedby="__BVID__300__BV_description_"><option value="HelloBEP20">
+                      HelloBEP20
+                    </option><option value="SimpleBEP20">
+                      SimpleBEP20
+                    </option><option value="StandardBEP20">
+                      StandardBEP20
+                    </option><option value="BurnableBEP20">
+                      BurnableBEP20
+                    </option><option value="MintableBEP20">
+                      MintableBEP20
+                    </option><option value="CommonBEP20">
+                      CommonBEP20
+                    </option><option value="UnlimitedBEP20">
+                      UnlimitedBEP20
+                    </option><option value="AmazingBEP20">
+                      AmazingBEP20
+                    </option><option value="PowerfulBEP20">
+                      PowerfulBEP20
+                    </option></select>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__300__BV_description_">Choose your Token Type.</small></div>
+                                    </div>
+                                    <div role="group" class="form-group" id="__BVID__302"><label for="network" class="d-block" id="__BVID__302__BV_label_">Network *</label>
+                                        <div><select id="network" class="custom-select custom-select-lg" aria-describedby="__BVID__302__BV_description_"><!----><!----><!----><!----><!----><!----><!----><option value="bsc_mainnet">
+                      Binance Smart Chain - Mainnet
+                    </option><option value="bsc_testnet">
+                      Binance Smart Chain - Testnet
+                    </option></select>
+                                            <!---->
+                                            <!----><small tabindex="-1" class="form-text text-muted" id="__BVID__302__BV_description_">Choose your Network.</small></div>
+                                    </div>
+                                    <!---->
+                                    <!----><a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" rel="noopener" target="_blank" class=""><small>How to connect MetaMask to Binance Smart Chain?</small></a>
+                                    <div class="list-group list-group-flush">
+                                        <div class="list-group-item py-3 d-flex justify-content-between align-items-center border-0 list-group-item-secondary">
+                                            <div>Price</div> <span class="border p-2 font-weight-bold">
+                      0.25 BNB
+                    </span></div>
+                                        <div class="list-group-item border"><span><div role="group" class="form-group" id="__BVID__306"><!----><div><div class="custom-control custom-checkbox b-custom-control-sm"><input id="tokenAgreement" type="checkbox" name="tokenAgreement" class="custom-control-input" value="accepted"><label for="tokenAgreement" class="custom-control-label"><p class="mb-1">
+                            I have read, understood and agreed to Token Generator's
+                            <u role="button" tabindex="0">Terms of Use</u>.
+                          </p></label></div> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div> <button type="submit" class="btn my-3 py-3 px-5 text-uppercase btn-primary btn-block">
+                  Next
+                </button></div>
+                            </div>
+                        </form>
+                        <!---->
+                    </div>
+                    <div aria-busy="true" class="b-overlay-wrap position-relative mb-3 p-3" id="customer-details">
+                        <div class="my-3">
+                            <h4>
+                                Billing Information<br> <small class="text-muted">Enter your billing information</small></h4>
+                            <hr>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-md-12"><span><div role="group" class="form-group" id="__BVID__312"><label for="wallet" class="d-block" id="__BVID__312__BV_label_">Creator Wallet Address</label><div><input id="wallet" name="wallet" type="text" readonly="readonly" class="form-control form-control-lg"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><span><div role="group" class="form-group" id="__BVID__315"><label for="businessLegalName" class="d-block" id="__BVID__315__BV_label_">Creator or Business Legal Name</label><div><input id="businessLegalName" name="businessLegalName" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><span><div role="group" class="form-group" id="__BVID__318"><label for="email" class="d-block" id="__BVID__318__BV_label_">Email</label><div><input id="email" name="email" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8"><span><div role="group" class="form-group" id="__BVID__321"><label for="address" class="d-block" id="__BVID__321__BV_label_">Billing Address</label><div><input id="address" name="address" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                        <div class="col-md-4"><span><div role="group" class="form-group" id="__BVID__324"><label for="postcode" class="d-block" id="__BVID__324__BV_label_">ZIP/Postal Code</label><div><input id="postcode" name="postcode" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4"><span><div role="group" class="form-group" id="__BVID__327"><label for="city" class="d-block" id="__BVID__327__BV_label_">City</label><div><input id="city" name="city" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                        <div class="col-md-4"><span><div role="group" class="form-group" id="__BVID__330"><label for="state" class="d-block" id="__BVID__330__BV_label_">State/Province</label><div><input id="state" name="state" type="text" class="form-control form-control-lg" maxlength="200"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                        <div class="col-md-4"><span><div role="group" class="form-group" id="__BVID__333"><label for="countries" class="d-block" id="__BVID__333__BV_label_">Country/Region</label><div><select id="country" class="custom-select custom-select-lg"><option value="AF">
+                            Afghanistan
+                          </option><option value="AX">
+                            Aland Islands
+                          </option><option value="AL">
+                            Albania
+                          </option><option value="DZ">
+                            Algeria
+                          </option><option value="AS">
+                            AmericanSamoa
+                          </option><option value="AD">
+                            Andorra
+                          </option><option value="AO">
+                            Angola
+                          </option><option value="AI">
+                            Anguilla
+                          </option><option value="AQ">
+                            Antarctica
+                          </option><option value="AG">
+                            Antigua and Barbuda
+                          </option><option value="AR">
+                            Argentina
+                          </option><option value="AM">
+                            Armenia
+                          </option><option value="AW">
+                            Aruba
+                          </option><option value="AU">
+                            Australia
+                          </option><option value="AT">
+                            Austria
+                          </option><option value="AZ">
+                            Azerbaijan
+                          </option><option value="BS">
+                            Bahamas
+                          </option><option value="BH">
+                            Bahrain
+                          </option><option value="BD">
+                            Bangladesh
+                          </option><option value="BB">
+                            Barbados
+                          </option><option value="BY">
+                            Belarus
+                          </option><option value="BE">
+                            Belgium
+                          </option><option value="BZ">
+                            Belize
+                          </option><option value="BJ">
+                            Benin
+                          </option><option value="BM">
+                            Bermuda
+                          </option><option value="BT">
+                            Bhutan
+                          </option><option value="BO">
+                            Bolivia, Plurinational State of
+                          </option><option value="BA">
+                            Bosnia and Herzegovina
+                          </option><option value="BW">
+                            Botswana
+                          </option><option value="BR">
+                            Brazil
+                          </option><option value="IO">
+                            British Indian Ocean Territory
+                          </option><option value="BN">
+                            Brunei Darussalam
+                          </option><option value="BG">
+                            Bulgaria
+                          </option><option value="BF">
+                            Burkina Faso
+                          </option><option value="BI">
+                            Burundi
+                          </option><option value="KH">
+                            Cambodia
+                          </option><option value="CM">
+                            Cameroon
+                          </option><option value="CA">
+                            Canada
+                          </option><option value="CV">
+                            Cape Verde
+                          </option><option value="KY">
+                            Cayman Islands
+                          </option><option value="CF">
+                            Central African Republic
+                          </option><option value="TD">
+                            Chad
+                          </option><option value="CL">
+                            Chile
+                          </option><option value="CN">
+                            China
+                          </option><option value="CX">
+                            Christmas Island
+                          </option><option value="CC">
+                            Cocos (Keeling) Islands
+                          </option><option value="CO">
+                            Colombia
+                          </option><option value="KM">
+                            Comoros
+                          </option><option value="CG">
+                            Congo
+                          </option><option value="CD">
+                            Congo, The Democratic Republic of the Congo
+                          </option><option value="CK">
+                            Cook Islands
+                          </option><option value="CR">
+                            Costa Rica
+                          </option><option value="CI">
+                            Cote d'Ivoire
+                          </option><option value="HR">
+                            Croatia
+                          </option><option value="CU">
+                            Cuba
+                          </option><option value="CY">
+                            Cyprus
+                          </option><option value="CZ">
+                            Czech Republic
+                          </option><option value="DK">
+                            Denmark
+                          </option><option value="DJ">
+                            Djibouti
+                          </option><option value="DM">
+                            Dominica
+                          </option><option value="DO">
+                            Dominican Republic
+                          </option><option value="EC">
+                            Ecuador
+                          </option><option value="EG">
+                            Egypt
+                          </option><option value="SV">
+                            El Salvador
+                          </option><option value="GQ">
+                            Equatorial Guinea
+                          </option><option value="ER">
+                            Eritrea
+                          </option><option value="EE">
+                            Estonia
+                          </option><option value="ET">
+                            Ethiopia
+                          </option><option value="FK">
+                            Falkland Islands (Malvinas)
+                          </option><option value="FO">
+                            Faroe Islands
+                          </option><option value="FJ">
+                            Fiji
+                          </option><option value="FI">
+                            Finland
+                          </option><option value="FR">
+                            France
+                          </option><option value="GF">
+                            French Guiana
+                          </option><option value="PF">
+                            French Polynesia
+                          </option><option value="GA">
+                            Gabon
+                          </option><option value="GM">
+                            Gambia
+                          </option><option value="GE">
+                            Georgia
+                          </option><option value="DE">
+                            Germany
+                          </option><option value="GH">
+                            Ghana
+                          </option><option value="GI">
+                            Gibraltar
+                          </option><option value="GR">
+                            Greece
+                          </option><option value="GL">
+                            Greenland
+                          </option><option value="GD">
+                            Grenada
+                          </option><option value="GP">
+                            Guadeloupe
+                          </option><option value="GU">
+                            Guam
+                          </option><option value="GT">
+                            Guatemala
+                          </option><option value="GG">
+                            Guernsey
+                          </option><option value="GN">
+                            Guinea
+                          </option><option value="GW">
+                            Guinea-Bissau
+                          </option><option value="GY">
+                            Guyana
+                          </option><option value="HT">
+                            Haiti
+                          </option><option value="VA">
+                            Holy See (Vatican City State)
+                          </option><option value="HN">
+                            Honduras
+                          </option><option value="HK">
+                            Hong Kong
+                          </option><option value="HU">
+                            Hungary
+                          </option><option value="IS">
+                            Iceland
+                          </option><option value="IN">
+                            India
+                          </option><option value="ID">
+                            Indonesia
+                          </option><option value="IR">
+                            Iran, Islamic Republic of Persian Gulf
+                          </option><option value="IQ">
+                            Iraq
+                          </option><option value="IE">
+                            Ireland
+                          </option><option value="IM">
+                            Isle of Man
+                          </option><option value="IL">
+                            Israel
+                          </option><option value="IT">
+                            Italy
+                          </option><option value="JM">
+                            Jamaica
+                          </option><option value="JP">
+                            Japan
+                          </option><option value="JE">
+                            Jersey
+                          </option><option value="JO">
+                            Jordan
+                          </option><option value="KZ">
+                            Kazakhstan
+                          </option><option value="KE">
+                            Kenya
+                          </option><option value="KI">
+                            Kiribati
+                          </option><option value="KP">
+                            Korea, Democratic People's Republic of Korea
+                          </option><option value="KR">
+                            Korea, Republic of South Korea
+                          </option><option value="KW">
+                            Kuwait
+                          </option><option value="KG">
+                            Kyrgyzstan
+                          </option><option value="LA">
+                            Laos
+                          </option><option value="LV">
+                            Latvia
+                          </option><option value="LB">
+                            Lebanon
+                          </option><option value="LS">
+                            Lesotho
+                          </option><option value="LR">
+                            Liberia
+                          </option><option value="LY">
+                            Libyan Arab Jamahiriya
+                          </option><option value="LI">
+                            Liechtenstein
+                          </option><option value="LT">
+                            Lithuania
+                          </option><option value="LU">
+                            Luxembourg
+                          </option><option value="MO">
+                            Macao
+                          </option><option value="MK">
+                            Macedonia
+                          </option><option value="MG">
+                            Madagascar
+                          </option><option value="MW">
+                            Malawi
+                          </option><option value="MY">
+                            Malaysia
+                          </option><option value="MV">
+                            Maldives
+                          </option><option value="ML">
+                            Mali
+                          </option><option value="MT">
+                            Malta
+                          </option><option value="MH">
+                            Marshall Islands
+                          </option><option value="MQ">
+                            Martinique
+                          </option><option value="MR">
+                            Mauritania
+                          </option><option value="MU">
+                            Mauritius
+                          </option><option value="YT">
+                            Mayotte
+                          </option><option value="MX">
+                            Mexico
+                          </option><option value="FM">
+                            Micronesia, Federated States of Micronesia
+                          </option><option value="MD">
+                            Moldova
+                          </option><option value="MC">
+                            Monaco
+                          </option><option value="MN">
+                            Mongolia
+                          </option><option value="ME">
+                            Montenegro
+                          </option><option value="MS">
+                            Montserrat
+                          </option><option value="MA">
+                            Morocco
+                          </option><option value="MZ">
+                            Mozambique
+                          </option><option value="MM">
+                            Myanmar
+                          </option><option value="NA">
+                            Namibia
+                          </option><option value="NR">
+                            Nauru
+                          </option><option value="NP">
+                            Nepal
+                          </option><option value="NL">
+                            Netherlands
+                          </option><option value="AN">
+                            Netherlands Antilles
+                          </option><option value="NC">
+                            New Caledonia
+                          </option><option value="NZ">
+                            New Zealand
+                          </option><option value="NI">
+                            Nicaragua
+                          </option><option value="NE">
+                            Niger
+                          </option><option value="NG">
+                            Nigeria
+                          </option><option value="NU">
+                            Niue
+                          </option><option value="NF">
+                            Norfolk Island
+                          </option><option value="MP">
+                            Northern Mariana Islands
+                          </option><option value="NO">
+                            Norway
+                          </option><option value="OM">
+                            Oman
+                          </option><option value="PK">
+                            Pakistan
+                          </option><option value="PW">
+                            Palau
+                          </option><option value="PS">
+                            Palestinian Territory, Occupied
+                          </option><option value="PA">
+                            Panama
+                          </option><option value="PG">
+                            Papua New Guinea
+                          </option><option value="PY">
+                            Paraguay
+                          </option><option value="PE">
+                            Peru
+                          </option><option value="PH">
+                            Philippines
+                          </option><option value="PN">
+                            Pitcairn
+                          </option><option value="PL">
+                            Poland
+                          </option><option value="PT">
+                            Portugal
+                          </option><option value="PR">
+                            Puerto Rico
+                          </option><option value="QA">
+                            Qatar
+                          </option><option value="RO">
+                            Romania
+                          </option><option value="RU">
+                            Russia
+                          </option><option value="RW">
+                            Rwanda
+                          </option><option value="RE">
+                            Reunion
+                          </option><option value="BL">
+                            Saint Barthelemy
+                          </option><option value="SH">
+                            Saint Helena, Ascension and Tristan Da Cunha
+                          </option><option value="KN">
+                            Saint Kitts and Nevis
+                          </option><option value="LC">
+                            Saint Lucia
+                          </option><option value="MF">
+                            Saint Martin
+                          </option><option value="PM">
+                            Saint Pierre and Miquelon
+                          </option><option value="VC">
+                            Saint Vincent and the Grenadines
+                          </option><option value="WS">
+                            Samoa
+                          </option><option value="SM">
+                            San Marino
+                          </option><option value="ST">
+                            Sao Tome and Principe
+                          </option><option value="SA">
+                            Saudi Arabia
+                          </option><option value="SN">
+                            Senegal
+                          </option><option value="RS">
+                            Serbia
+                          </option><option value="SC">
+                            Seychelles
+                          </option><option value="SL">
+                            Sierra Leone
+                          </option><option value="SG">
+                            Singapore
+                          </option><option value="SK">
+                            Slovakia
+                          </option><option value="SI">
+                            Slovenia
+                          </option><option value="SB">
+                            Solomon Islands
+                          </option><option value="SO">
+                            Somalia
+                          </option><option value="ZA">
+                            South Africa
+                          </option><option value="SS">
+                            South Sudan
+                          </option><option value="GS">
+                            South Georgia and the South Sandwich Islands
+                          </option><option value="ES">
+                            Spain
+                          </option><option value="LK">
+                            Sri Lanka
+                          </option><option value="SD">
+                            Sudan
+                          </option><option value="SR">
+                            Suriname
+                          </option><option value="SJ">
+                            Svalbard and Jan Mayen
+                          </option><option value="SZ">
+                            Swaziland
+                          </option><option value="SE">
+                            Sweden
+                          </option><option value="CH">
+                            Switzerland
+                          </option><option value="SY">
+                            Syrian Arab Republic
+                          </option><option value="TW">
+                            Taiwan
+                          </option><option value="TJ">
+                            Tajikistan
+                          </option><option value="TZ">
+                            Tanzania, United Republic of Tanzania
+                          </option><option value="TH">
+                            Thailand
+                          </option><option value="TL">
+                            Timor-Leste
+                          </option><option value="TG">
+                            Togo
+                          </option><option value="TK">
+                            Tokelau
+                          </option><option value="TO">
+                            Tonga
+                          </option><option value="TT">
+                            Trinidad and Tobago
+                          </option><option value="TN">
+                            Tunisia
+                          </option><option value="TR">
+                            Turkey
+                          </option><option value="TM">
+                            Turkmenistan
+                          </option><option value="TC">
+                            Turks and Caicos Islands
+                          </option><option value="TV">
+                            Tuvalu
+                          </option><option value="UG">
+                            Uganda
+                          </option><option value="UA">
+                            Ukraine
+                          </option><option value="AE">
+                            United Arab Emirates
+                          </option><option value="GB">
+                            United Kingdom
+                          </option><option value="US">
+                            United States
+                          </option><option value="UY">
+                            Uruguay
+                          </option><option value="UZ">
+                            Uzbekistan
+                          </option><option value="VU">
+                            Vanuatu
+                          </option><option value="VE">
+                            Venezuela, Bolivarian Republic of Venezuela
+                          </option><option value="VN">
+                            Vietnam
+                          </option><option value="VG">
+                            Virgin Islands, British
+                          </option><option value="VI">
+                            Virgin Islands, U.S.
+                          </option><option value="WF">
+                            Wallis and Futuna
+                          </option><option value="YE">
+                            Yemen
+                          </option><option value="ZM">
+                            Zambia
+                          </option><option value="ZW">
+                            Zimbabwe
+                          </option></select> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><!----></div></div></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6"><span><div role="group" class="form-group" id="__BVID__336"><label for="fiscalCode" class="d-block" id="__BVID__336__BV_label_">Tax ID Code</label><div><input id="fiscalCode" name="fiscalCode" type="text" class="form-control form-control-lg" maxlength="200" aria-describedby="__BVID__336__BV_description_"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__336__BV_description_">
+                          Use for Personal Account.<br>
+                          Example format: IT12345678901 or ABCDEF12G45H678Z
+                        </small></div></div></span></div>
+                                        <div class="col-md-6"><span><div role="group" class="form-group" id="__BVID__339"><label for="vatCode" class="d-block" id="__BVID__339__BV_label_">VAT or Tax Registration Number</label><div><input id="vatCode" name="vatCode" type="text" class="form-control form-control-lg" maxlength="200" aria-describedby="__BVID__339__BV_description_"> <small class="text-danger" style="display: none;">
+                          
+                        </small><!----><!----><small tabindex="-1" class="form-text text-muted" id="__BVID__339__BV_description_">
+                          Use for Company Account.<br>
+                          Example format: IT12345678901
+                        </small></div></div></span></div>
+                                    </div>
+                                    <!---->
+                                </div>
+                                <div class="col-lg-4">
+                                    <div role="alert" aria-live="polite" aria-atomic="true" class="alert alert-secondary">
+                                        <!---->
+                                        <h4 class="alert-heading">Note</h4>
+                                        <p>
+                                            Billing information are required for our business tax calculation so, please, be accurate in entering valid information. Your billing name, address or any of these information will never be public and in no way publicly related to the token created.
+                                            <br> Read more in the <u role="button" tabindex="0">Terms of Use</u> you previously accepted.
+                                        </p>
+                                    </div> <button type="submit" class="btn my-3 py-3 px-5 text-uppercase btn-primary btn-block">
+                  Save Billing
+                </button></div>
+                            </div>
+                            <!---->
+                            <!---->
+                        </form>
+                        <div class="my-3">
+                            <hr>
+                            <div class="row">
+                                <div xs="6" class="col"><button type="button" class="btn text-uppercase btn-link">
+                  Back to Token Details
+                </button></div>
+                            </div>
+                        </div>
+                        <div class="b-overlay position-absolute" style="inset: 0px; z-index: 10;">
+                            <div class="position-absolute bg-white" style="inset: 0px; opacity: 0.75; backdrop-filter: blur(2px);"></div>
+                            <div class="position-absolute" style="top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"><span class="display-2"><!----> <!----></span></div>
+                        </div>
+                    </div>
+                    <div aria-busy="true" class="b-overlay-wrap position-relative mb-3 p-3" id="checkout-details">
+                        <div class="my-3">
+                            <h4>
+                                Checkout<br> <small class="text-muted">Double check your information and start your transaction</small></h4>
+                            <hr>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="card mb-3">
+                                        <!---->
+                                        <div class="card-header bg-secondary text-white">Summary</div>
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item">
+                                                <h5 class="mb-1">
+                                                    -<br> <small class="text-muted">Tokens will be sent to this address</small></h5>
+                                            </div>
+                                            <div class="list-group-item">
+                                                <h5 class="mb-1">
+                                                    SimpleBEP20<br> <small class="text-muted">Token Type</small></h5>
+                                            </div>
+                                            <div class="list-group-item">
+                                                -<br> <small class="text-muted">Name</small></div>
+                                            <div class="list-group-item">
+                                                -<br> <small class="text-muted">Symbol</small></div>
+                                            <div class="list-group-item">
+                                                18<br> <small class="text-muted">Decimals</small></div>
+                                            <div class="list-group-item">
+                                                -<br> <small class="text-muted">Initial Supply</small></div>
+                                            <div class="list-group-item">
+                                                -<br> <small class="text-muted">Max Supply</small></div>
+                                        </div>
+                                        <!---->
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-3">
+                                        <!---->
+                                        <div class="card-header bg-secondary text-white">Transaction Cost</div>
+                                        <div class="list-group payment-box list-group-flush">
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg>                                                    Gas Fee
+                                                </div> <span class="badge p-2 text-white badge-warning">
+                        Variable
+                      </span></div>
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg>                                                    Token Deployment
+                                                </div> <span class="badge p-2 badge-light">
+                        0.25 BNB
+                      </span></div>
+                                            <!---->
+                                            <div class="list-group-item d-flex justify-content-between list-group-item-secondary">
+                                                <div><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg>                                                    <b>Total</b></div> <span class="badge p-2 badge-secondary">
+                        0.25 BNB
+                      </span></div>
+                                        </div>
+                                        <!---->
+                                        <!---->
+                                    </div> <button type="submit" class="btn mb-3 py-3 px-5 text-uppercase btn-success btn-block">
+                  Create Token
+                </button></div>
+                            </div>
+                        </form>
+                        <div class="my-3">
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6"><button type="button" class="btn text-uppercase btn-link">
+                  Back to Billing Information
+                </button></div>
+                            </div>
+                        </div>
+                        <div class="b-overlay position-absolute" style="inset: 0px; z-index: 10;">
+                            <div class="position-absolute bg-white" style="inset: 0px; opacity: 0.75; backdrop-filter: blur(2px);"></div>
+                            <div class="position-absolute" style="top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"><span class="display-2"><!----></span></div>
+                        </div>
+                    </div>
+                    <div class="row" id="transaction-details">
+                        <div class="col">
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer container-fluid">
+            <div class="row bg-dark text-light py-4">
+                <div class="col-lg-12 col-xl-8 offset-xl-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item disabled">
+                                    Token Generator
+                                </div> <a href="create.metaexchange.finance/watch-token/token-generator/create/ethereum/" target="_self" class="list-group-item text-light list-group-item-action">
+              Create ERC20 on Ethereum
+            </a> <a href="create.metaexchange.finance/watch-token/token-generator/create/polygon/" target="_self" class="list-group-item text-light list-group-item-action">
+              Create ERC20 on Polygon
+            </a> <a href="create.metaexchange.finance/watch-token/token-generator/create/bsc/" target="_self" class="list-group-item text-light list-group-item-action">
+              Create BEP20 on BSC
+            </a></div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item disabled">
+                                    Token Watcher
+                                </div> <a href="create.metaexchange.finance/watch-token/token-watcher/create/" target="_self" class="list-group-item text-light list-group-item-action">
+              Create Token Page
+            </a>
+                                <div class="list-group-item disabled">
+                                    Utilities
+                                </div> <a href="create.metaexchange.finance/watch-token/utilities/coin-history/" target="_self" class="list-group-item text-light list-group-item-action">
+              Coin History
+            </a></div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item" role="button" tabindex="0"><small>Contact Us</small></div>
+                                <div class="list-group-item" role="button" tabindex="0"><small>Terms and Conditions</small></div>
+                                <div class="list-group-item" role="button" tabindex="0"><small>Privacy Policy</small></div>
+                                <div class="list-group-item">
+                                    <div class="social-buttons"><a href="https://twitter.com/nonceptcom" rel="noopener" target="_blank" class=""><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="px-2 svg-inline--fa fa-twitter"><path fill="currentColor" d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z" class=""></path></svg></a>                                        <a href="https://www.facebook.com/nonceptcom" rel="noopener" target="_blank" class=""><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="px-2 svg-inline--fa fa-facebook-f"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z" class=""></path></svg></a>                                        <a href="https://www.linkedin.com/company/noncept" rel="noopener" target="_blank" class=""><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="px-2 svg-inline--fa fa-linkedin-in"><path fill="currentColor" d="M100.3 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.6 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.3 61.9 111.3 142.3V448z" class=""></path></svg></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-8 offset-xl-2">
+                    <hr>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item text-muted"><small>
+            © 2022 -
+            Made with <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="emoji sunglasses fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-emoji-sunglasses-fill b-icon bi"><g><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v.116A4.22 4.22 0 0 1 8 5c.35 0 .69.04 1 .116V5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-1.994-1.839A2.99 2.99 0 0 0 8 6c-.393 0-.74.064-1.006.161A2 2 0 0 1 5 8h-.438a2 2 0 0 1-1.94-1.515L2.31 5.243zM4.969 9.75A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .866-.5z"></path></g></svg> at
+            <a href="https://noncept.com/" rel="noopener" target="_blank" class="text-warning text-decoration-none">NONCEPT</a>
+            - All rights reserved.
+          </small></div>
+                    </div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <div class="global-ui"></div>
+    </div>
+    <script src="/assets/js/app.b1460cf2.js" defer=""></script>
+    <script src="/assets/js/12.3d6110ab.js" defer=""></script>
+    <script src="/assets/js/10.ddc53c2f.js" defer=""></script>
+    <script src="/assets/js/3.e7a4d217.js" defer=""></script>
+
+
+</body>
+
+</html>

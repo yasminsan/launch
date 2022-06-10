@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create BEP-20 Binance Smart Chain (BSC) Hyper Deflationary Token with holders reward (redistribution) and Automatic Buyback without coding in minutes. BSC BEP20 token builder. Binance Smart Chain deflationary token smart contract. Binance Smart Chain DApp Builder. BNB BSCMetaExchange. Create or make Everrise RISE clone copy.">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/bsc/css1/teste1.css">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/bsc/css1/teste2.css">
+    
+    <title>Create BEP-20 Binance Smart Chain (BSC) Hyper Deflationary Token with holders reward (redistribution) and Automatic Buyback without coding for free. Binance Smart Chain BEP20 token builder. Free RISE token clone.</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://create.metaexchange.finance/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163444952-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-163444952-1');
+    </script>
+    
+</head>
+
+<body>
+    
+      <div class="nav bsc-gradient">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+        <img src="https://create.metaexchange.finance/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+        <a href="https://create.metaexchange.finance">MetaExchange</a> | <a class="ethhref" href="https://create.metaexchange.finance/bsc/"><span class="short">Binance Smart Chain (BSC)</span></a>
+         | <span class="erc"> (BEP-20)</span> Token with rewards & buyback
+    </div>
+  </div>
+  <div class="nav-btn" onclick="mobMenu(this)">
+    <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    
+    <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+    <a class="topmenu" href="#networks">Change network</a>
+    <a class="topmenu" href="#contact">Contact</a>
+
+  </div>
+</div>
+    
+    <div class="network small">
+        <button id="addMainBSC">Use BSC Mainnet</button> <button id="addTestBSC">Use BSC Testnet</button> <button id="connect">Connect wallet</button>
+        <span id="nometamask" class="err" style="display: none">Please install Metamask first...</span>
+        <span id="connected" style="color: rgb(228, 240, 12); display: none"></span>
+        <p><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></p>
+    </div>
+    
+    <div>
+        
+        <div style="text-align: center">
+            <h2>Create <span class="ethereum"></span> token with reward and auto buyback<span class="erc"> (BEP-20)</span></h2>
+            <p>Hyper Deflationary Token with holders reward and automatic buyback (similar to RISE token).<p>
+                <div class="small">
+            <p>Improvements:</p>
+            <p>1) Improved fees (taxes) settings: now fees have step 0.1 so you can set them as 1.5/1.6/etc. (in the original contract step is 1 so you can set only whole percents like 1/2/3/etc.);</p>
+            <p>2) Improved buyback limit settings: it can be precisely set with decimals like 0.1, 0.01 etc. (in the original contract only 1/2/3/etc. BNB);</p>
+            <p>3) More logical buyback fee setting instead of total liquidity setting.</p>
+            <p>All the functions of the contract remain the same! Only admin settings are improved!</p>
+            <p>After the contract deployment you can change any settings (fees, limits, addresses) via our auto-generated admin panel or directly on bscscan.<br>
+            The tokens are minted to your wallet; ownership is set to your wallet. We do not have any access to your contract.</p>
+            <p>For more details on how the token works please refer to EverRise (RISE) token and FAQ section below.</p>
+            <p>Please do not ask us questions on how to use 3rd-party services like Pancakeswap etc. - refer to their tutorials!</p>
+            <p>Verification: send your contract address to our email (only email applications!) to get verified (mainnet only).</p>
+            </div>
+            <p></p>
+            <p>(Mainnet and Testnet available)</p>
+        </div>
+        
+        <hr>
+        
+        <div style="text-align: center">
+            <h2>Create token</h2>
+            Name:<br>
+            <input type="text" id="nname" size="50" required>
+            <br><span class="small">Full token name, like "My Token"</span>
+            <div id="tokendata"></div>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Symbol:<br>
+            <input type="text" id="nsymbol" size="50" required>
+            <br><span class="small">Like "TKN"</span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Decimals:<br>
+            <input type="number" id="ndecimals" step="1" max="18" min="0" value="9" style="width: 50px;" required>
+            <br><span class="small">Number of digits after decimal point, e.g. 0.12 = 2 decimals, 0.12345 = 5 decimals. Min. 0, max. 18.
+            <br>We recommend to have decimals because it will let you have even small transfers taxable.<br>
+            Original RISE token has 9 decimals.
+            </span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Total supply:<br>
+            <input type="number" id="nsupply" min="0" value="1000000000000000" required>
+            <br><span class="small">Total quantity of tokens to be created.<br>
+            Original RISE has 1000000000000000.</span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Holders reward fee:<br>
+            <input type="number" id="ntax1" step="0.1" min="0" value="2.0" style="width: 70px;" required>%
+            <br><span class="small">This tax is used to reward token holders for HODLing - it is redistributed to holders.<br>
+            Original RISE token has 2%.
+            </span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Buyback fee:<br>
+            <input type="number" id="ntax2" step="0.1" min="0" value="6.0" style="width: 70px;" required>%
+            <br><span class="small">This tax is used for automatic buyback of the tokens.<br>
+            Original RISE token has 6%.
+            </span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Marketing fee:<br>
+            <input type="number" id="ntax3" step="0.1" min="0.5" value="3.0" style="width: 70px;" required>%
+            <br><span class="small">This tax is coming to your marketing wallet (minus our 0.5% fee it will be <span id="mkt">2.5</span>%).<br>
+            Original RISE token has 3%.
+            </span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Total taxes:<br>
+            <span id="total">11</span>%
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Marketing wallet:<br>
+            <input type="text" id="nmarketing" size="50" required>
+            <br><span class="small">Wallet for marketing fee.</span>
+            <p></p>
+        </div>
+        
+        <div style="text-align: center">
+            Token creation cost: <strong>FREE</strong><br>
+            Our interest: 0.5% fee is taken from marketing fees when they occur. We do not take any tokens, all the tokens are yours.
+            <p><span id="errors" class="err"></span></p>
+            <p id="created" style="color: green; display: none">Token has been successfully created</p>
+            <p><button id="buildbtn">Create token</button></p>
+        </div>
+        
+    </div>
+    
+    <hr>
+    
+    <div style="text-align: center">
+        
+        <h2>My tokens</h2>
+        <span class="small">Click on token to open admin panel</span>
+        <div id="mycontr"></div>
+        <p></p>
+        <p>You can also access your token that is not listed here, or you can use bscscan directly.<br>
+        Your token address can be found in the transaction that created the token.</p>
+        <h2>Input your token address:</h2>
+        <input type="text" id="mytok" size="60">
+        <p id="tokdata"></p>
+        <p><button id="tokadm">Admin</button></p>
+        
+    </div>
+    
+    <div style="text-align: center">
+        
+        <h2>FAQ</h2>
+        <p><strong>PancakeSwap supports only MainNet. Is there any way to test it on Testnet?</strong></p>
+        <p>Yes, you can test it on <a target="_blank" href="https://pancake.kiemtienonline360.com/#/swap">PancakeSwap simulation on BSC Testnet</a></p>
+        
+        <p><strong>Why I can't see buyback and burn?</strong></p>
+        <p>Buyback and burn start when token contract's balance reaches 1BNB</p>
+        
+        <p><strong>How to verify my token contract?</strong></p>
+        <p>Send us your token contract address (mainnet only).</p>
+        
+    </div>
+    
+    <div class="footer" style="font-size: 12px; text-align: center; margin: 40px;"><hr>
+        &copy;&nbsp;<a href="https://create.metaexchange.finance">MetaExchange.finance</a> - create blockchain DApps and tokens on Ethereum, Tron Network, Binance Smart Chain (BSC), Polygon (MATIC), Thundercore (TT) without coding
+    </div>
+    
+<!-- Networks -->
+<div id="networks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/eth/">Ethereum (ETH)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/bsc/">Binance Smart Chain (BSC)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/trx/">Tron (TRX)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/thundercore/">Thundercore (TT)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/matic/">Polygon (MATIC)</a></p>
+  </div>
+</div>
+    
+<!-- Contact -->
+<div id="contact" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a href="mailto:db@metaexchange.finance.org.br">db@metaexchange.finance.org.br</a></p>
+    <p align="center"><a target="_blank" href="https://t.me/dapp_builder">t.me/dapp_builder</a></p>
+    <p align="center"><a target="_blank" href="https://twitter.com/dappbuilder_org">twitter.com/dappbuilder_org</a></p>
+  </div>
+</div>
+
+<!-- Admin -->
+<div id="admin" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+
+        <div style="text-align: center;">
+    <h1><span class="name"></span> (<span class="symbol"></span>)</h1>
+    <p><a href="" target="_blank" id="tokenaddress"></a></p>
+    <p><button class="btnmodal" id="addtowallet">Add to wallet</button> <button class="btnmodal" id="copyaddress">Copy address</button></p>
+    <p>Total supply: <span id="supply"></span> | Decimals: <span id="decimals"></span></p>
+</div>
+
+<hr>
+
+<div style="text-align: center;">
+    <h1>Owner</h1>
+    <p><span id="owner"></span><span id="isowner"></span></p>
+    <p>Ownership: <span id="locked"></span> <button id="unlock" class="btnmodal" style="display:none">Get back</button></p>
+    <p id="locker">Lock ownership for <input type="number" step="1" id="days" style="width: 60px; text-align: center"> days <button id="lock" class="onlyowner btnmodal">Lock</button></p>
+    
+</div>
+<hr>
+<div style="text-align: center">
+        
+    <h1>Fees & taxes</h1>
+        
+    <p>Reward tax: <span id="taxfee"></span>% <input type="number" id="newfee" min="0" step="0.1" style="width: 60px; text-align: center"> <button id="setfee" class="onlyowner btnmodal">Change</button></p>
+    <p>Buyback tax: <span id="buybackfee"></span>% <input type="number" id="newbb" min="0" step="0.1" style="width: 60px; text-align: center"> <button id="setbb" class="onlyowner btnmodal">Change</button></p>
+    <p>Marketing tax: <span id="marketingfee"></span>% <input type="number" id="newmkt" min="0" step="0.1" style="width: 60px; text-align: center"> <button id="setmkt" class="onlyowner btnmodal">Change</button>
+    <br><span class="small">Marketing tax includes our fee 0.5% so it can't be less than 0.5%</span></p>
+    <p>Total fees: <span id="totalfees"></span>%</p>
+    <p>Marketing wallet: <span id="marketingaddress"></span></p>
+    <p>Change marketing wallet: <input type="text" id="newmarketingaddress"> <button id="setnewmarketingaddress" class="onlyowner btnmodal">Change</button></p>
+</div>
+<hr>
+
+<div style="text-align: center;">
+    <h1>Swap/liquidity and buyback</h1>
+    <p>Pancakeswap v2 pair: <a href="" target="_blank" id="uniswapV2Pair"></a></p>
+    <p>Swap & liquify: <span id="swapon"></span> <button id="enableswap" class="onlyowner btnmodal" style="display:none">Enable</button><button id="disableswap" class="onlyowner btnmodal" style="display:none">Disable</button></p>
+    <p>Buyback: <span id="buybackon"></span> <button id="enablebuyback" class="onlyowner btnmodal" style="display:none">Enable</button><button id="disablebuyback" class="onlyowner btnmodal" style="display:none">Disable</button>
+    <br><span class="small">Buyback works only when swap & liquify is ON and starts when the contract balance reaches 1BNB.</span></p>
+    <p></p>
+    <p>Min. tokens quantity for swap: <span id="minimumTokensBeforeSwapAmount"></span> <span class="symbol"></span> <input type="number" id="newminforswap" style="width: 100px; text-align: center"> <button id="setminforswap" class="onlyowner btnmodal">Change</button></p>
+    <p>Buyback max. amount: <span id="buyBackUpperLimitAmount"></span> <span class="eth">BNB</span> <input type="number" id="newbuybacklimit" style="width: 60px; text-align: center" step="0.1"> <button id="setbuybacklimit" class="onlyowner btnmodal">Change</button></p>
+    <p></p>
+    <p>Tokens on the contract address: <span id="tokenbalance"></span>  <span class="symbol"></span></p>
+</div>
+<hr>
+
+<div style="text-align: center;">
+    <h1>Other parameters</h1>
+    <p>Max. transaction amount: <span id="maxtx"></span> <span class="symbol"></span> <input type="number" id="newmaxtx" style="width: 100px; text-align: center"> <button id="setmaxtx" class="onlyowner btnmodal">Change</button></p>
+</div>
+<hr>
+
+<div style="text-align: center">
+    <h1>Other functions</h1>
+    
+    <p><button id="presaleOn" class="onlyowner btnmodal">Turn on presale mode</button><br>
+    All taxes are 0, max tx amount is equal to total supply, swap and liquify OFF.</p>
+    
+    <p><button id="presaleOff" class="onlyowner btnmodal">Turn off presale mode</button><br>
+    Taxes are as pre-set, max tx amount as pre-set, swap and liquify ON.</p>
+</div>
+
+<hr>
+<div style="text-align: center">
+    <h1>Whitelist</h1>
+    
+    <h2>Check if address is excluded from reward</h2>
+    <p><input type="text" id="checkreward" size="60"></p>
+    <div id="checkrewardres"></div>
+    <p><button id="exrewardbtn" class="onlyowner btnmodal" style="display:none">Exclude</button> <button id="inrewardbtn" class="onlyowner btnmodal" style="display:none">Include</button></p>
+    
+    <h2>Check if address is excluded from fee</h2>
+    <p><input type="text" id="checkfee" size="60"></p>
+    <div id="checkfeeres"></div>
+    <p><button id="exfeebtn" class="onlyowner btnmodal" style="display:none">Exclude</button> <button id="infeebtn" class="onlyowner btnmodal" style="display:none">Include</button></p>
+    
+</div>
+    
+  </div>
+</div>
+
+<script src="https://create.metaexchange.finance/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://create.metaexchange.finance/js/layout.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://create.metaexchange.finance/js/ethers-5.0.umd.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://create.metaexchange.finance/bsc/js/bsc.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/contract.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://create.metaexchange.finance/js/init.eth.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://create.metaexchange.finance/js/addnet.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

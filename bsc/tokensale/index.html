@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create BEP-20 Binance Smart Chain (BSC) token sale contract for ICO without coding in minutes. BSC BEP20 token sale smart contract builder. Binance Smart Chain ICO smart contract. Binance Smart Chain DApp Builder. BNB BSCMetaExchange">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/bsc/css1/teste1.css">
+    <link rel="stylesheet" type="text/css" href="https://create.metaexchange.finance/bsc/css1/teste2.css">
+    
+    <title>Create BEP-20 Binance Smart Chain (BSC) token sale contract (ICO) without coding. Binance Smart Chain BEP20 token sale and ICO builder.</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://create.metaexchange.finance/dappbuilder-round.png" />
+    <meta name="apple-mobile-web-app-title" content="DappBuilder">
+    <meta name="application-name" content="DappBuilder">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163444952-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-163444952-1');
+    </script>
+    
+</head>
+
+<body>
+    
+  <div class="nav bsc-gradient">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+        <img src="https://create.metaexchange.finance/favicon-32x32.png" style="width:24px; height:24px; display:inline">&nbsp;
+        <a href="https://create.metaexchange.finance">MetaExchange</a> | <a class='ethhref' href="https://create.metaexchange.finance/bsc/"><span class="short">Binance Smart Chain (BSC)</span></a>
+         | <span class='erc'> (BEP-20)</span> Token sale
+    </div>
+  </div>
+  <div class="nav-btn" onclick="mobMenu(this)">
+    <label for="nav-check">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    
+    <!--button class="translate english" id="en">English</button>
+    <button class="translate chinese" id="zh">中文</button>
+    <button class="translate vietnamese" id="vi">Tiếng Việt</button>
+    <button class="translate russian" id="ru">Русский</button-->
+    <a class="topmenu" href="#networks">Change network</a>
+    <a class="topmenu" href="#contact">Contact</a>
+
+  </div>
+</div>
+    
+    <div class="network small">
+        <button id="addMainBSC">Use BSC Mainnet</button> <button id="addTestBSC">Use BSC Testnet</button> <button id="connect">Connect wallet</button>
+        <span id="nometamask" class="err" style="display: none">Please install Metamask first...</span>
+        <span id="connected" style="color: green; display: none"></span>
+        <p><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></p>
+    </div>
+    
+    <div class='newtknsale'>
+        
+        <div class='newtknhead' style="text-align: center">
+            <h2>Create <span class='ethereum'></span> token sale contract<span class='erc'> (BEP-20)</span></h2>
+            <h2>This is an old version. We recommend using the <a href="https://create.metaexchange.finance/bsc/tokensale2/">updated version</a>.</h2>
+            <p>This is a simple token sale contract with fixed parameters. Contract will send tokens in exchange of <span class='eth'>BNB</span>.<br>
+            Buyers can purchase tokens by sending <span class='eth'>BNB</span> to contract address or using user interface (you will be able to download a simple draft UI with main functions and QR code after creating a token sale contract).<br>
+            Contract correctly processes changes and decimals and automatically stops selling tokens once required quantity has been sold out.<br>
+            You can use it with any <span class='erc'> (BEP-20)</span> token.</p>
+            <p></p>
+            <p>Once you have created token sale contract don't forget to Approve it for selling tokens from your wallet (you will be able to do it in the contract's admin panel).<br>Do not send tokens to the contract, make sure you have enough balance of the tokens in your wallet (contract is selling tokens from your wallet by allowance way)!</p>
+            <p></p>
+            <p>(Mainnet and Testnet available)</p>
+        </div>
+        
+        <div class="newtknaddr" style="text-align: center">
+            Token address:<br>
+            <span class="small">Contract address of the token that you want to sell</span><br>
+            <input type='text' id='newtknaddress' size="60" required>
+            <br><span class="small clickable" id="mytokens">[show my tokens]</span>
+            <div id="tokendata"></div>
+            <p></p>
+        </div>
+        
+
+        <div class = 'newsaleqty' style="text-align: center">
+            Tokens quantity:<br>
+            <input type='number' id='newqty' required>
+            <br><span class='small'>Maximum quantity of tokens for sale. After selling this quantity contract will stop selling.<br>
+            Remember to approve sale contract for this quantity after it's creation.</span>
+            <p></p>
+        </div>
+        
+        <div class = 'newsaleprice' style="text-align: center">
+            Price per token:<br>
+            <input type='number' id='newprice' style='width: 200px' required> <span class='eth'>BNB</span>
+            <br><span class='small'>Selling price for 1 token (how much 1 token will cost - please make sure you input the right price).</span>
+        </div>
+        
+        
+        <div class = 'newtknperbnb' style="text-align: center">
+          (Check rate: 1 <span class='eth'>BNB</span> = <span id="tokperbnb">?</span> tokens)
+            <p></p>
+        </div>
+        
+        <div class = 'newtknbtn' style='text-align: center'>
+            Contract creation cost: <span id='buildercost'></span>&nbsp;<span class='eth'></span>
+            <p><span id='errors' class='err'></span></p>
+            <p><button id='buildbtn'>Create contract</button></p>
+        </div>
+        
+    </div>
+    
+    <div class='mycontracts'>
+        
+        <h2 style='text-align: center'>My token sale contracts</h2>
+        
+        <table>
+            <thead><tr><th>#</th><th>Address</th><th>Token</th><th>Tokens for sale</th><th>Token price</th><th>Status</th><th>Admin</th><th>UI</th></tr></thead>
+                <tbody id="strHtml"></tbody>
+        </table>
+        
+    </div>
+    
+    <div class='footer' style='font-size: 12px; text-align: center; margin: 40px;'><hr>
+        &copy;&nbsp;<a href='https://create.metaexchange.finance'>MetaExchange.finance</a> - create blockchain DApps and tokens on Ethereum, Tron Network, Binance Smart Chain (BSC), Polygon (MATIC), Thundercore (TT) without coding
+    </div>
+    
+<!-- Networks -->
+<div id="networks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/eth/">Ethereum (ETH)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/bsc/">Binance Smart Chain (BSC)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/trx/">Tron (TRX)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/thundercore/">Thundercore (TT)</a></p>
+    <p align="center"><a class="changenet" href="https://create.metaexchange.finance/matic/">Polygon (MATIC)</a></p>
+  </div>
+</div>
+    
+<!-- Contact -->
+<div id="contact" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <p align="center"><a href="mailto:db@metaexchange.finance.org.br">db@metaexchange.finance.org.br</a></p>
+    <p align="center"><a target="_blank" href="https://t.me/dapp_builder">t.me/dapp_builder</a></p>
+    <p align="center"><a target="_blank" href="https://twitter.com/dappbuilder_org">twitter.com/dappbuilder_org</a></p>
+  </div>
+</div>
+
+<!-- My tokens -->
+<div id="mytoks" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>My tokens</h1>
+    <p>Only tokens created on this platform are shown here but you can use any valid <span class='erc'> (BEP-20)</span> token</p>
+    <p>If you can't see your token here please input its contract address manually</p>
+    <table>
+        <thead><tr><th>#</th><th>Address</th><th>Name</th><th>Symbol</th><th>Choose</th></tr></thead>
+                <tbody id="strHtmlTokens"></tbody>
+        </table>
+  </div>
+</div>
+
+<!-- Admin -->
+<div id="admin" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Token sale contract <span id="thisAddr"></span></h1>
+    <p>View on blockchain explorer: <span id="viewThis"></span></p>
+    <p></p>
+    <p>Total sale quantity: <span id="thisSaleQty"></span></p>
+    <p>Token price: <span id="thisTokenPrice"></span> <span class='eth'>BNB</span></p>
+    <p>Tokens sold: <span id="thisSold"></span></p>
+    <p>Total raised: <span id="thisRaised"></span> <span class='eth'>BNB</span></p>
+    <p>Unsold tokens: <span id="thisUnsold"></span></p>
+    <hr>
+    <p>Token address: <span id="thisTokenAddress"></span></p>
+    <p>View on blockchain explorer: <span id="viewThisToken"></span></p>
+    <p>Token name: <span id="thisName"></span></p>
+    <p>Token symbol: <span id="thisSymbol"></span></p>
+    <p>Token decimals: <span id="thisDec"></span></p>
+    <p><button id="addToken" class="btnmodal">Add to wallet</button></p>
+    <hr>
+    <p>Token sale status: <span id="thisStatus"></span></p>
+    <button id="thisApprove" class="btnmodal" style="display: none">Approve</button>
+    <hr>
+    <p>Balance: <span id="thisBalance"></span> <span class='eth'>BNB</span></p>
+    <p>Withdraw: <input type="number" id="thisWithdrawAmount" value="0"> <span class='eth'>BNB</span> <button id="thisWithdraw" class="btnmodal">Withdraw</button> <button id="thisWithdrawAll" class="btnmodal">Withdraw all</button></p>
+  </div>
+</div>
+
+<!-- UI -->
+<div id="ui" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Token sale UI  <span class="uiAddr"></span></h1>
+    
+    <p>You can download front-end HTML file and edit the file after downloading, or order some design on top of it.<br>
+    Please keep the scripts, IDs and classes otherwise some important functions may not work properly.</p>
+    <p>Just upload index.html file to your website - and your very own token sale is live!</p>
+    <p>You can also copy the HTML code to clipboard.</p>
+    <p><button class="btnmodal" onclick="download('index.html','htmlpage')">Download HTML file</button> 
+    <button class="btnmodal" onclick="copyToClipboard('#htmlpage')">Copy HTML code</button> 
+    <button class="btnmodal" onclick="$('#htmlpage').toggle()">Show/hide HTML</button></p>
+    
+<div id="htmlpage" class="embedcode" style="display: none">
+            
+&lt;!DOCTYPE html&gt;<br>
+&lt;html &gt;<br>
+&lt;head&gt;<br>
+    &lt;meta charset="UTF-8"&gt;<br>
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+    &lt;meta name="description" content="Token sale page"&gt;<br>
+<br>
+    &lt;title&gt;Token sale&lt;/title&gt;<br>
+<br>   
+    &lt;script&gt;<br>
+        var test = <span id="istest">false</span>; // False if contracts are on Mainnet<br>
+        var contractAddressSale = '<span class="uiAddr"></span>';<br>
+        var contractAddressToken = '<span class="tokenAddressUI"></span>';<br>
+    &lt;/script&gt;<br>
+<br>    
+    &lt;style&gt;<br>
+<br>        
+        body {font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #FFFFFF; background-color: #000000; font-size: 16px; font-weight: 400;}<br>
+<br>
+        h1 { font-size: 24px; font-weight: 700;} <br>
+        h2 { font-size: 22px; font-weight: 500;}<br>
+<br>
+        .small {<br>
+            font-size: 12px;<br>
+        }<br>
+<br>
+        .err {<br>
+             color: #fa0707;<br>
+        }<br>
+<br>
+        * {<br>
+          box-sizing: border-box;<br>
+        }<br>
+        <br>
+        a {<br>
+          color: #FFFFFF;<br>
+          text-decoration: none;<br>
+        }<br>
+        <br>
+        a:hover {<br>
+          color: #C0C0C0;<br>
+        }<br>
+        <br>
+        .clickable {<br>
+            cursor: pointer;<br>
+        }<br>
+        <br>
+        .clickable:hover {<br>
+            color: #C0C0C0;<br>
+        }<br>
+        <br>
+        button {<br>
+          background-color: #283747;<br>
+          border: none;<br>
+          border-radius: 2px;<br>
+          color: white;<br>
+          padding: 5px 20px;<br>
+          text-align: center;<br>
+          text-decoration: none;<br>
+          font-size: 16px;<br>
+          display: inline-block;<br>
+          margin: 4px 2px;<br>
+          cursor: pointer;<br>
+        }<br>
+        <br>
+        button:hover {<br>
+          background-color: #008000;<br>
+        }<br>
+        <br>
+        button[disabled] {<br>
+          opacity: 0.6;<br>
+          cursor: not-allowed;<br>
+        }<br>
+        <br>
+        hr {<br>
+            margin: 20px;<br>
+            border: 0;<br>
+            border-top: 1px dashed;<br>
+        }<br>
+        <br>
+        input {<br>
+          text-align: center;<br>
+          font-size: 18px;<br>
+          background-color: #000000;<br>
+          color: #FFFFFF;<br>
+          border:1px solid;<br>
+        }<br>
+    &lt;/style&gt;<br>
+    <br>
+&lt;/head&gt;<br>
+<br>
+&lt;body&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;button id="connect" style="font-size: 12px"&gt;Connect&lt;/button&gt;<br>
+        &lt;span id="nometamask" class="err" style="display: none"&gt;Please install Metamask first...&lt;/span&gt;<br>
+        &lt;div class="network small"&gt;&lt;span id="curnet"&gt;&lt;span class="err"&gt;Please use DApp browser/extension (e.g. &lt;a target="_blank" href="https://metamask.io"&gt;Metamask&lt;/a&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span id="myAddr"&gt;&lt;/span&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h2&gt;Token info&lt;/h2&gt;<br>
+        &lt;p&gt;&lt;span id="tokenName"&gt;<span id="tokenNameUI"></span>&lt;/span&gt; (&lt;span id="tokenSymbol"&gt;<span id="tokenSymbolUI"></span>&lt;/span&gt;)&lt;/p&gt;<br>
+        &lt;p&gt;&lt;a target="_blank" href="" id="tokenAddress"&gt;<span class="tokenAddressUI"></span>&lt;/a&gt;&lt;/p&gt;<br>
+        &lt;!-- Reserved in case you want to show decimals and total supply: &lt;span id="#tokenDecimalsUI"&gt;&lt;/span&gt; &lt;span id="#tokenSupplyUI"&gt;&lt;/span&gt;--&gt;<br>
+        &lt;p&gt;&lt;button id="addToken" style="text-align: center"&gt;Add to wallet&lt;/button&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h2&gt;Token sale info&lt;/h2&gt;<br>
+        &lt;p&gt;Total sale quantity: &lt;span id="quantity"&gt;<span id="quantityUI"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Token price: &lt;span id="price"&gt;<span id="priceUI"></span>&lt;/span&gt; &lt;span class='eth'&gt;BNB&lt;/span&gt; (&lt;span id="ratio"&gt;&lt;/span&gt; tokens per 1 BNB)&lt;/p&gt;<br>
+        &lt;p&gt;&lt;progress id="progress" value="0" max="100" style="width: 70%"&gt;&lt;/progress&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Tokens sold: &lt;span id="sold"&gt;<span id="soldUI"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Total raised: &lt;span id="raised"&gt;<span id="raisedUI"></span>&lt;/span&gt; &lt;span class='eth'&gt;BNB&lt;/span&gt;&lt;/p&gt;<br>
+        &lt;p&gt;Unsold tokens: &lt;span id="unsold"&gt;<span id="unsoldUI"></span>&lt;/span&gt;&lt;/p&gt;<br>
+        <br>
+        &lt;p&gt;Token sale status: &lt;span id="status"&gt;--&lt;/span&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h2&gt;Buy tokens&lt;/h2&gt;<br>
+        <br>
+        &lt;p&gt;&lt;input type="number" id="buyQty" value="1"&gt;&lt;/p&gt;<br>
+        &lt;h2&gt;&lt;span id="buyAmount"&gt;&lt;/span&gt; BNB&lt;/h2&gt;<br>
+        &lt;p&gt;&lt;button id="buyBtn" style="text-align: center"&gt;Buy&lt;/button&gt;&lt;/p&gt;<br>
+        &lt;p&gt;My tokens balance: &lt;span id="myTokens"&gt;&lt;/span&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+    &lt;hr&gt;<br>
+    <br>
+    &lt;div style="text-align: center"&gt;<br>
+        &lt;h2&gt;Sale contract&lt;/h2&gt;<br>
+        &lt;p&gt;You can also buy tokens by sending BNB to this contract (increase gas limit so that transaction does not fail):&lt;/p&gt;<br>
+        &lt;p&gt;&lt;a href="" target="_blank" id="saleAddress"&gt;<span class="uiAddr"></span>&lt;/a&gt;&lt;/p&gt;<br>
+            &lt;div style="text-align: center" id="refqr"&gt;&lt;/div&gt;<br>
+            &lt;p style="text-align: center"&gt;&lt;a style="text-decoration: none" id="refd" href="" download&gt;&nbsp;Download QR&nbsp;&lt;/a&gt;&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    <br>
+&lt;script src='https://create.metaexchange.finance/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+&lt;script src='https://create.metaexchange.finance/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+&lt;script src='https://create.metaexchange.finance/bsc/tokensale/js/tokensale.ui.js' type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+            
+</div>
+
+<hr>
+
+<div style="text-align: center">
+    
+    <h2>Your token sale contract can also work without UI.</h2>
+    <p>Buyers can send BNB to contract and get tokens in return instantly.</p>
+    <p>Recommended gas limit for correct contract execution 200,000 or more for standard tokens and 1,000,000+ for tokens with auto-swaps, etc.</p>
+    <p>Just share sale contract address</p>
+    <p><span class="uiAddr"></span></p>
+    <p>and QR code</p>
+    <div style="text-align: center" id="refqr"></div>
+    <p style="text-align: center"><a style="text-decoration: none" id="refd" href="" download>&nbsp;Download QR&nbsp;</a></p>
+    
+</div>
+
+    
+  </div>
+</div>
+
+<script src='https://create.metaexchange.finance/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/layout.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/bsc/js/bsc.js' type="text/javascript" charset="utf-8"></script>
+<script src='js/contract.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/init.eth.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://create.metaexchange.finance/js/addnet.js' type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+(window.webpackJsonp = window.webpackJsonp || []).push([
+    [21], {
+        401: function(t, a, e) {
+            "use strict";
+            e.r(a);
+            var s = { name: "HowItWorks", props: { blockchain: { type: String, default: null }, token: { type: Object, default: function() { return {} } } } },
+                n = e(61),
+                c = Object(n.a)(s, (function() {
+                    var t = this,
+                        a = t.$createElement,
+                        e = t._self._c || a;
+                    return e("div", { staticClass: "how-it-works-table" }, [e("b-row", { staticClass: "mt-5" }, [e("b-col", { attrs: { lg: "4" } }, [e("b-card", { staticClass: "mb-3", attrs: { "bg-variant": "white" } }, [e("b-card-title", { staticClass: "font-weight-light text-center" }, [e("p", { staticClass: "h1 mb-2" }, [e("b-icon-wallet", { staticClass: "m-4" })], 1), t._v(" "), e("p", [t._v("Install MetaMask")])]), t._v(" "), e("p", { staticClass: "card-text text-center" }, [t._v("\n          You need to have\n          "), e("a", { staticClass: "text-reset", attrs: { href: "https://metamask.io/", target: "_blank" } }, [t._v("MetaMask")]), t._v("\n          installed with an amount of " + t._s(t.token.currency) + " to pay for contract deployment.\n        ")])], 1)], 1), t._v(" "), e("b-col", { attrs: { lg: "4" } }, [e("b-card", { staticClass: "mb-3", attrs: { "bg-variant": "white" } }, [e("b-card-title", { staticClass: "font-weight-light text-center" }, [e("p", { staticClass: "h1 mb-2" }, [e("b-icon-card-checklist", { staticClass: "m-4" })], 1), t._v(" "), e("p", [t._v("Enter Details")])]), t._v(" "), e("p", { staticClass: "card-text text-center" }, [t._v("\n          Enter your preferred Token name and symbol.\n          Choose your supply and Token type.\n        ")])], 1)], 1), t._v(" "), e("b-col", { attrs: { lg: "4" } }, [e("b-card", { staticClass: "mb-3", attrs: { "bg-variant": "white" } }, [e("b-card-title", { staticClass: "font-weight-light text-center" }, [e("p", { staticClass: "h1 mb-2" }, [e("b-icon-link", { staticClass: "m-4" })], 1), t._v(" "), e("p", [t._v("Deploy Token")])]), t._v(" "), e("p", { staticClass: "card-text text-center" }, [t._v("\n          Confirm your transaction using MetaMask.\n          Once deployed your Token is ready to use.\n        ")])], 1)], 1)], 1), t._v(" "), e("b-row", [e("b-col", { staticClass: "text-center", attrs: { lg: "10", "offset-lg": "1" } }, [e("b-button", { staticClass: "my-5 py-3 px-5 text-uppercase", attrs: { to: t.$withBase("/token-generator/create/" + t.blockchain + "/"), size: "lg", variant: "outline-success" } }, [t._v("\n        Get Started\n      ")])], 1)], 1)], 1)
+                }), [], !1, null, null, null);
+            a.default = c.exports
+        }
+    }
+]);
